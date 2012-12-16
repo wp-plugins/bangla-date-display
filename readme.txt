@@ -93,13 +93,13 @@ Or, Use these PHP codes in your theme's sidebar or template file:
 
 
 * Show current date from bangla calendar: 
-<?php echo do_shortcode('[bangla_date]'); ?>
+< ?php echo do_shortcode('[bangla_date]'); ?>
 
 
 * Show english date in bangla language: 
-<?php echo do_shortcode('[english_date]'); ?>
+< ?php echo do_shortcode('[english_date]'); ?>
 
 
 * Show name of the day: 
-<?php echo do_shortcode('[bangla_day]'); ?>
+< ?php echo do_shortcode('[bangla_day]'); ?>
 
