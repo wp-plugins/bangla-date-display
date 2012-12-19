@@ -1,4 +1,4 @@
-=== Bangla Date Display ===
+﻿=== Bangla Date Display ===
 Contributors: M.A. IMRAN
 Developer link: http://facebook.com/imran2w
 Tags:  Bangla, Bengali, Bangla Date, Bangla Calendar, Bangladesh, Time
