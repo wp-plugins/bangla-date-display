@@ -4,7 +4,7 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: "Bangla Date Display" is a simple and easy to use plugin that allows you to show current bangla date or english date in bangla language anywhere in your blog!
 Author: M.A. IMRAN
-Version: 4.0
+Version: 4.1
 Author URI: http://facebook.com/imran2w
 */
 
@@ -896,8 +896,8 @@ return $bangla_time;
 function bn_day() {
 
 $day = array( "Sat" => "শনিবার",
- "Sun" => "রবিবার",
- "Mon" => "সোমবার", 
+"Sun" => "রবিবার",
+"Mon" => "সোমবার", 
 "Tue" => "মঙ্গলবার", 
 "Wed" => "বুধবার", 
 "Thu" => "বৃহস্পতিবার", 
@@ -957,31 +957,7 @@ echo $day; echo ' '; echo $month_year; echo ' বঙ্গাব্দ';
 
 }
 
-function bangla_season() {
 
-include_once 'class.banglaDate.php';
-$bn = new BanglaDate(time(), 0);
-$bdtmonth = $bn->get_month();
-$month = sprintf( '%s', implode( ' ', $bdtmonth ) );
-
-$season = $month;
-
-if($season == "বৈশাখ") {$season = "গ্রীষ্মকাল"; }
-elseif($season == "জৈষ্ঠ") {$season = "গ্রীষ্মকাল";}
-elseif($season == "আষাঢ়") {$season = "বর্ষাকাল";}
-elseif($season == "শ্রাবণ") {$season = "বর্ষাকাল";}
-elseif($season == "ভাদ্র") {$season = "শরৎকাল";}
-elseif($season == "আশ্বিন") {$season = "শরৎকাল";}
-elseif($season == "কার্তিক") {$season = "হেমন্তকাল";}
-elseif($season == "অগ্রহায়ণ") {$season = "হেমন্তকাল";}
-elseif($season == "পৌষ") {$season = "শীতকাল";}
-elseif($season == "মাঘ") {$season = "শীতকাল";}
-elseif($season == "ফাল্গুন") {$season = "বসন্তকাল";}
-elseif($season == "চৈত্র") {$season = "বসন্তকাল";}
-
-echo $season;
-
-}
 
 function bn_number($number) {
 
@@ -1025,8 +1001,8 @@ return $number;
 function bn_en_date() {
 
 $month = array( "1" => "জানুয়ারি",
- "2" => "ফেব্রুয়ারি",
- "3" => "মার্চ", 
+"2" => "ফেব্রুয়ারি",
+"3" => "মার্চ", 
 "4" => "এপ্রিল", 
 "5" => "মে", 
 "6" => "জুন", 
@@ -1079,14 +1055,12 @@ return $bangla_date;
 }
 
 
-
 if(is_admin())
 	include 'bddp_admin.php';
 
 add_shortcode('bangla_time', 'bangla_time');
 add_shortcode('bangla_day', 'bn_day');
 add_shortcode('bangla_date', 'bangla_date_function');
-add_shortcode('bangla_season', 'bangla_season');
 add_shortcode('english_date', 'bn_en_date');
 
 ?>

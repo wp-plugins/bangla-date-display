@@ -29,23 +29,13 @@ Install and activate the plugin. Then go to your "Dashboard > Settings > Bangla 
 == Changelog ==
 =
 
-= 4.0 (19-12-2012) =
+= 4.1 (19-12-2012) =
+* Bug fix.
 * New feature: Show current time in bangla.
 * Time zone updated! Now using GMT+6 (Dhaka, Bangladesh) time zone.
 * New shortcode.
 
 
-
-= 3.0 (19-12-2012) =
-
-
-* New feature: Show name of the current season.
-
-
-* New shortcode.
-
-
-* Admin page update.
 
 
 
@@ -114,8 +104,6 @@ Use these shortcodes in your blog post/page:
 
 
 * Show name of the day: [bangla_day]
-* Show name of the current season: [bangla_season]
-
 * Show current time: [bangla_time]
 
 
@@ -134,9 +122,6 @@ Or, Use these PHP codes in your theme's sidebar or template file:
 
 * Show name of the day: 
 <?php echo do_shortcode('[bangla_day]'); ?>
-
-* Show name of the current season:
- <?php echo do_shortcode('[bangla_season]'); ?>
 * Show current time:
 <?php echo do_shortcode('[bangla_time]'); ?>
 
