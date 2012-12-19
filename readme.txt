@@ -149,3 +149,4 @@ Or, Use these PHP codes in your theme's sidebar or template file:
 * Show current time:
 <?php echo do_shortcode('[bangla_time]'); ?>
 
+ 
