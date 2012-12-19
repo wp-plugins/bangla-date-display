@@ -29,6 +29,10 @@ Install and activate the plugin. Then go to your "Dashboard > Settings > Bangla 
 == Changelog ==
 =
 
+= 4.2 (19-12-2012) =
+* Admin page update.
+
+
 = 4.1 (19-12-2012) =
 * Bug fix.
 * New feature: Show current time in bangla.

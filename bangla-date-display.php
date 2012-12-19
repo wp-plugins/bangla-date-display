@@ -4,11 +4,11 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: "Bangla Date Display" is a simple and easy to use plugin that allows you to show current bangla date or english date in bangla language anywhere in your blog!
 Author: M.A. IMRAN
-Version: 4.1
+Version: 4.2
 Author URI: http://facebook.com/imran2w
 */
 
-#**********************************************************************
+#*********************************************************************
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
