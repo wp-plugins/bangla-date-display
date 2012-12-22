@@ -4,7 +4,7 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: "Bangla Date Display" is a simple and easy to use plugin that allows you to show current bangla date or english date in bangla language anywhere in your blog!
 Author: M.A. IMRAN
-Version: 4.2
+Version: 4.5
 Author URI: http://facebook.com/imran2w
 */
 
@@ -957,6 +957,30 @@ echo $day; echo ' '; echo $month_year; echo ' বঙ্গাব্দ';
 
 }
 
+function bn_season() {
+
+$bn = new BanglaDate(time(), 0);
+$bdtmonth = $bn->get_month();
+$month = sprintf( '%s', implode( ' ', $bdtmonth ) );
+
+$season = $month;
+
+if($season == "বৈশাখ") {$season = "গ্রীষ্মকাল"; }
+elseif($season == "জৈষ্ঠ") {$season = "গ্রীষ্মকাল";}
+elseif($season == "আষাঢ়") {$season = "বর্ষাকাল";}
+elseif($season == "শ্রাবণ") {$season = "বর্ষাকাল";}
+elseif($season == "ভাদ্র") {$season = "শরৎকাল";}
+elseif($season == "আশ্বিন") {$season = "শরৎকাল";}
+elseif($season == "কার্তিক") {$season = "হেমন্তকাল";}
+elseif($season == "অগ্রহায়ণ") {$season = "হেমন্তকাল";}
+elseif($season == "পৌষ") {$season = "শীতকাল";}
+elseif($season == "মাঘ") {$season = "শীতকাল";}
+elseif($season == "ফাল্গুন") {$season = "বসন্তকাল";}
+elseif($season == "চৈত্র") {$season = "বসন্তকাল";}
+
+echo $season;
+
+}
 
 
 function bn_number($number) {
@@ -1014,53 +1038,69 @@ $month = array( "1" => "জানুয়ারি",
 "12" => "ডিসেম্বর" 
 );
 
-$day_number = array( "1st" => "১লা",
-"2nd" => "২রা",
-"3rd" => "৩রা",
-"4th" => "৪ঠা",
-"5th" => "৫ই",
-"6th" => "৬ই",
-"7th" => "৭ই",
-"8th" => "৮ই",
-"9th" => "৯ই",
-"10th" => "১০ই",
-"11th" => "১১ই",
-"12th" => "১২ই",
-"13th" => "১৩ই",
-"14th" => "১৪ই",
-"15th" => "১৫ই",
-"16th" => "১৬ই",
-"17th" => "১৭ই",
-"18th" => "১৮ই",
-"19th" => "১৯শে",
-"20th" => "২০শে",
-"21th" => "২১শে",
-"22th" => "২২শে",
-"23th" => "২৩শে",
-"24th" => "২৪শে",
-"25th" => "২৫শে",
-"26th" => "২৬শে",
-"27th" => "২৭শে",
-"28th" => "২৮শে",
-"29th" => "২৯শে",
-"30th" => "৩০শে",
-"31th" => "৩১শে"
+$day_number = array( "1" => "১লা",
+"2" => "২রা",
+"3" => "৩রা",
+"4" => "৪ঠা",
+"5" => "৫ই",
+"6" => "৬ই",
+"7" => "৭ই",
+"8" => "৮ই",
+"9" => "৯ই",
+"10" => "১০ই",
+"11" => "১১ই",
+"12" => "১২ই",
+"13" => "১৩ই",
+"14" => "১৪ই",
+"15" => "১৫ই",
+"16" => "১৬ই",
+"17" => "১৭ই",
+"18" => "১৮ই",
+"19" => "১৯শে",
+"20" => "২০শে",
+"21" => "২১শে",
+"22" => "২২শে",
+"23" => "২৩শে",
+"24" => "২৪শে",
+"25" => "২৫শে",
+"26" => "২৬শে",
+"27" => "২৭শে",
+"28" => "২৮শে",
+"29" => "২৯শে",
+"30" => "৩০শে",
+"31" => "৩১শে"
 );
 
 $offset=6*60*60; //converting 6 hours to seconds.
-$bangla_date = $day_number[gmdate("jS", time()+$offset)] . " " . $month[gmdate("n", time()+$offset)] . ", " . bn_number(gmdate("Y", time()+$offset)) . " ইং";
+$bangla_date = $day_number[gmdate("j", time()+$offset)] . " " . $month[gmdate("n", time()+$offset)] . ", " . bn_number(gmdate("Y", time()+$offset)) . " ইং";
 
 return $bangla_date;
 
+}
+
+function widget_bangla_date_display($args) {
+extract($args);
+?>
+<?php echo $before_widget; ?>
+<?php echo $before_title . 'আজকের দিন-তারিখ' . $after_title; ?>
+<ul>
+<li><?php echo do_shortcode('[bangla_day]'); ?> ( <?php echo do_shortcode('[bangla_time]'); ?> )</li>
+<li><?php echo do_shortcode('[bangla_date]'); ?></li>
+<li><?php echo do_shortcode('[english_date]'); ?></li>
+</ul>
+<?php echo $after_widget; ?>
+<?php
 }
 
 
 if(is_admin())
 	include 'bddp_admin.php';
 
+register_sidebar_widget('Bangla Date Display', 'widget_bangla_date_display');
 add_shortcode('bangla_time', 'bangla_time');
 add_shortcode('bangla_day', 'bn_day');
 add_shortcode('bangla_date', 'bangla_date_function');
+add_shortcode('bangla_season', 'bn_season');
 add_shortcode('english_date', 'bn_en_date');
 
 ?>

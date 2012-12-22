@@ -17,17 +17,47 @@ Easily display current bangla date (from bengali calendar) and english date in b
 
 Install and activate the plugin. Then go to your "Dashboard > Settings > Bangla Date Display" for detail usage instructions.
 
+= 
+
+Features: =
+- Bangla date
+
+- English date
+
+- Name of the day
+
+- Bangla time (special)
+
+- Name of the current season of Bangladesh
+
+...and more!
+
+
+
+* Easy to use shortcodes!
+
+* Everything in Bangla Language!
+* No special configuration or, knowledge required!
+* Automatic GMT+6 (Dhaka, Bangladesh) time and date.
+
+
 = Credits =
-*Developer: [M.A. IMRAN](http://facebook.com/imran2w) 
-
-*E-Mail: imran2w@gmail.com  
-
+*Developer: [M.A. IMRAN](http://facebook.com/imran2w)
+*E-Mail: imran2w@gmail.com
 *Website: [www.i-onlinemedia.net](http://www.i-onlinemedia.net)
 
 
 
 == Changelog ==
 
+
+= 4.5 =
+
+* New feature: Show name of the current season of Bangladesh.
+* New feature: Widget support
+* New shortcode.
+* Admin page update.
+* English date output bug fix.
 
 = 4.2 (19-12-2012) =
 * Admin page update.
@@ -111,22 +141,28 @@ Use these shortcodes in your blog post/page:
 * Show current time: [bangla_time]
 
 
+* Show name of the current season:
+ [bangla_season]
 
 Or, Use these PHP codes in your theme's sidebar or template file:
 
 
 
 * Show current date from bangla calendar: 
-<?php echo do_shortcode('[bangla_date]'); ?>
+< ?php echo do_shortcode('[bangla_date]'); ?>
 
 
 * Show english date in bangla language: 
-<?php echo do_shortcode('[english_date]'); ?>
+< ?php echo do_shortcode('[english_date]'); ?>
 
 
 * Show name of the day: 
-<?php echo do_shortcode('[bangla_day]'); ?>
+< ?php echo do_shortcode('[bangla_day]'); ?>
 * Show current time:
 <?php echo do_shortcode('[bangla_time]'); ?>
+
+ 
+* Show name of the current season:
+< ?php echo do_shortcode('[bangla_season]'); ?>
 
  

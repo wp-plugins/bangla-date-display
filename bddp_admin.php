@@ -12,14 +12,21 @@ if ( !current_user_can( 'manage_options' ) )  {
 wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 }
 
-echo '<div class="wrap">
-<div id="message" class="updated fade">Thank you for using "Bangla Date Display" wordpress plugin!</div>
+echo '<div class="wrap">' ?> <?php screen_icon(); ?><h2>Bangla Date Display Plugin Options</h2>
 <br/>
-<p><div style="font-size: medium; padding: 5px; text-align: center; color: red; background-color: green; font: SolaimanLipi;"><strong>বাংলা আমার মাতৃভাষা, বাংলা আমার অহংকার!</strong></div></p><br/>
-<br/><div style="font: SolaimanLipi, Georgia, "Times New Roman", Times, serif;">
-<b>General Usage:</b><br/>
-<p>"Bangla Date Display" is a simple and easy to use wordpress plugin that allows you to show bangla date or english date in bangla language anywhere in your blog.</p>
+<div class="postbox" style="display: block;width:325px;float:left;margin:10px;clear:left;">
+	<h3 class="hndle" style="padding:5px;"><span>About "Bangla Date Display" Plugin</span></h3>
+<div class="inside"><p align="justify">"Bangla Date Display" is a simple and easy to use wordpress plugin that allows you to show bangla date or english date in bangla language anywhere in your blog.</p></div></div>
 
+<div class="postbox" style="display: block;float:left;margin:10px;clear:left;">
+	<h3 class="hndle" style="padding:5px;"><span>Widget Usage Instructions</span></h3>
+<div class="inside">
+To use Bangla Date Display widget, go to "Appearance > Widgets". Drag and drop Bangla Date Display widget on your theme's sidebar.
+</div></div>
+
+<div class="postbox" style="display: block;float:left;margin:10px;clear:left;">
+	<h3 class="hndle" style="padding:5px;"><span>Shortcode Usage Instructions</span></h3>
+<div class="inside">
 <p> <b>Put these shortcodes in your blog post/page:</b><br/>
 
 - Show bangla date from bangla calendar: <code><span style="color: #000000"><span style="color: #0000BB"> &#91;bangla_date&#93;</span></span></code><br/>
@@ -29,8 +36,10 @@ echo '<div class="wrap">
 - Show name of the day: <code><span style="color: #000000"><span style="color: #0000BB"> &#91;bangla_day&#93;</span></span></code><br/>
 
 - Show current time: <code><span style="color: #000000"><span style="color: #0000BB"> &#91;bangla_time&#93;</span></span></code><br/>
+
+- Show name of the current season: <code><span style="color: #000000"><span style="color: #0000BB"> &#91;bangla_season&#93;</span></span></code><br/>
 </p><p>
-<b> Or, insert these php codes in your sidebar or any other template file where you want to show the current bangla date:</b><br/>
+<b> Or, insert these php codes in your sidebar or any other template file:</b><br/>
 <br/>
 - Show bangla date from bangla calendar: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_date&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
 </code>
@@ -43,9 +52,13 @@ echo '<div class="wrap">
 <br/><br/>
 - Show current time: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_time&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
 </code>
-</p></div>
 <br/><br/>
-<div id="message" class="updated fade"><b>Credits:</b><br/>
+- Show name of the current season: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_season&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
+</code>
+</p></div></div>
+<div class="postbox" style="display: block;float:left;margin:10px;clear:left;">
+<div class="inside">
+<b>Credits:</b><br/>
 <p>  Developer: <a href="http://facebook.com/imran2w">M.A. IMRAN</a></p><p>  E-Mail: imran2w@gmail.com</p>
 <p>  Website: <a href="http://www.i-onlinemedia.net">www.i-onlinemedia.net</a></p>
 <b>License:</b><br/>
@@ -60,10 +73,9 @@ echo '<div class="wrap">
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA</p>
+</div></div>
 </div>
-<br/>';
-
-echo '</div>';
+<?php
 }
 
 ?>
