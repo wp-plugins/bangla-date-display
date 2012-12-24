@@ -16,12 +16,12 @@ echo '<div class="wrap">' ?> <?php screen_icon(); ?><h2>Bangla Date Display Plug
 <br/>
 <div class="postbox" style="display: block;width:325px;float:left;margin:10px;clear:left;">
 	<h3 class="hndle" style="padding:5px;"><span>About "Bangla Date Display" Plugin</span></h3>
-<div class="inside"><p align="justify">"Bangla Date Display" is a simple and easy to use wordpress plugin that allows you to show bangla date or english date in bangla language anywhere in your blog.</p></div></div>
+<div class="inside"><p align="justify">"Bangla Date Display" is a simple and easy to use wordpress plugin that allows you to show bangla, english and hijri date in bangla language! anywhere in your very own wordpress blog with some extra features.</p></div></div>
 
 <div class="postbox" style="display: block;float:left;margin:10px;clear:left;">
 	<h3 class="hndle" style="padding:5px;"><span>Widget Usage Instructions</span></h3>
 <div class="inside">
-To use Bangla Date Display widget, go to "Appearance > Widgets". Drag and drop Bangla Date Display widget on your theme's sidebar.
+To use Bangla Date Display widget, go to "Appearance > Widgets". Just drag and drop Bangla Date Display widget on your theme's sidebar. Thats all!
 </div></div>
 
 <div class="postbox" style="display: block;float:left;margin:10px;clear:left;">
@@ -32,6 +32,8 @@ To use Bangla Date Display widget, go to "Appearance > Widgets". Drag and drop B
 - Show bangla date from bangla calendar: <code><span style="color: #000000"><span style="color: #0000BB"> &#91;bangla_date&#93;</span></span></code><br/>
 
 - Show english date in bangla language: <code><span style="color: #000000"><span style="color: #0000BB"> &#91;english_date&#93;</span></span></code><br/>
+
+- Show Hijri date in bangla language: <code><span style="color: #000000"><span style="color: #0000BB"> &#91;hijri_date&#93;</span></span></code><br/>
 
 - Show name of the day: <code><span style="color: #000000"><span style="color: #0000BB"> &#91;bangla_day&#93;</span></span></code><br/>
 
@@ -45,6 +47,9 @@ To use Bangla Date Display widget, go to "Appearance > Widgets". Drag and drop B
 </code>
 <br/><br/>
 - Show english date in bangla language: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;english_date&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
+</code>
+<br/><br/>
+- Show Hijri date in bangla language: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;hijri_date&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
 </code>
 <br/><br/>
 - Show name of the day: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_day&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>

@@ -1,16 +1,16 @@
 ﻿=== Bangla Date Display ===
 Contributors: M.A. IMRAN
 Developer link: http://facebook.com/imran2w
-Tags: Bangla, Bengali, Bangla Date, Bangla Calendar, Bangladesh, Time
+Tags: Bangla, Bengali, Bangla Date, Bangla Calendar, Bangladesh, Time, Hijri
 Requires at least: 2.8
 Tested up to: 3.5
 Stable tag: trunk
 
-Easily display current bangla date (from bengali calendar) and english date in bangla language anywhere in your very own wordpress blog!
+Easily display current Bangla date (from bengali calendar), English and Hijri date in bangla language anywhere in your very own wordpress blog!
 
 
 == Description == 
-"Bangla Date Display" is a simple and easy to use wordpress plugin that allows you to show current bangla date or english date in bangla language anywhere in your blog. Just install and activate the plugin. Then use its very simple shortcodes where you want; when you want. Thats all!
+"Bangla Date Display" is a simple and easy to use wordpress plugin that allows you to show current bangla, english and hijri date in bangla language anywhere in your blog. Just install and activate the plugin. Then use its widget or very simple shortcodes where you want; when you want. Thats all!
 
 
 = Usage =
@@ -21,35 +21,36 @@ Install and activate the plugin. Then go to your "Dashboard > Settings > Bangla 
 
 Features: =
 - Bangla date
-
+- Hijri Date
 - English date
-
 - Name of the day
-
 - Bangla time (special)
-
 - Name of the current season of Bangladesh
 
 ...and more!
 
-
-
-* Easy to use shortcodes!
-
+= Speciality =
+* Easy to use widget and shortcodes!
 * Everything in Bangla Language!
 * No special configuration or, knowledge required!
 * Automatic GMT+6 (Dhaka, Bangladesh) time and date.
 
 
 = Credits =
-*Developer: [M.A. IMRAN](http://facebook.com/imran2w)
-*E-Mail: imran2w@gmail.com
-*Website: [www.i-onlinemedia.net](http://www.i-onlinemedia.net)
+* Developer: [M.A. IMRAN](http://facebook.com/imran2w)
+* E-Mail: imran2w@gmail.com
+* Website: [www.i-onlinemedia.net](http://www.i-onlinemedia.net)
 
 
 
 == Changelog ==
 
+
+= 5.0 =
+* New feature: Hijri date.
+* New shortcode.
+* Widget update.
+* Screenshots added.
 
 = 4.5 =
 
@@ -137,6 +138,8 @@ Use these shortcodes in your blog post/page:
 * Show english date in bangla language: [english_date]
 
 
+* Show hijri date in bangla language: [hijri_date]
+
 * Show name of the day: [bangla_day]
 * Show current time: [bangla_time]
 
@@ -156,13 +159,21 @@ Or, Use these PHP codes in your theme's sidebar or template file:
 < ?php echo do_shortcode('[english_date]'); ?>
 
 
+* Show hijri date in bangla language: 
+< ?php echo do_shortcode('[hijri_date]'); ?>
+
+
 * Show name of the day: 
 < ?php echo do_shortcode('[bangla_day]'); ?>
 * Show current time:
-<?php echo do_shortcode('[bangla_time]'); ?>
+ < ?php echo do_shortcode('[bangla_time]'); ?>
 
  
 * Show name of the current season:
 < ?php echo do_shortcode('[bangla_season]'); ?>
 
  
+
+
+== Screenshots ==
+1. Widget preview.

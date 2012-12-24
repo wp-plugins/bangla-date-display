@@ -2,9 +2,9 @@
 /*
 Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
-Description: "Bangla Date Display" is a simple and easy to use plugin that allows you to show current bangla date or english date in bangla language anywhere in your blog!
+Description: "Bangla Date Display" is a simple and easy to use plugin that allows you to show current bangla, english and hijri date in bangla language anywhere in your blog with some extra features!
 Author: M.A. IMRAN
-Version: 4.5
+Version: 5.0
 Author URI: http://facebook.com/imran2w
 */
 
@@ -1078,6 +1078,65 @@ return $bangla_date;
 
 }
 
+function bn_hijri_date() {
+
+include "uCal.class.php";
+$d = new uCal;
+
+$Hday = $d->date("j");
+
+if($Hday == "1") {$Hday = "১লা"; }
+elseif($Hday == "2") {$Hday = "২রা";}
+elseif($Hday == "3") {$Hday = "৩রা";}
+elseif($Hday == "4") {$Hday = "৪ঠা";}
+elseif($Hday == "5") {$Hday = "৫ই";}
+elseif($Hday == "6") {$Hday = "৬ই";}
+elseif($Hday == "7") {$Hday = "৭ই";}
+elseif($Hday == "8") {$Hday = "৮ই";}
+elseif($Hday == "9") {$Hday = "৯ই";}
+elseif($Hday == "10") {$Hday = "১০ই";}
+elseif($Hday == "11") {$Hday = "১১ই";}
+elseif($Hday == "12") {$Hday = "১২ই";}
+elseif($Hday == "13") {$Hday = "১৩ই";}
+elseif($Hday == "14") {$Hday = "১৪ই";}
+elseif($Hday == "15") {$Hday = "১৫ই";}
+elseif($Hday == "16") {$Hday = "১৬ই";}
+elseif($Hday == "17") {$Hday = "১৭ই";}
+elseif($Hday == "18") {$Hday = "১৮ই";}
+elseif($Hday == "19") {$Hday = "১৯শে";}
+elseif($Hday == "20") {$Hday = "২০শে";}
+elseif($Hday == "21") {$Hday = "২১শে";}
+elseif($Hday == "22") {$Hday = "২২শে";}
+elseif($Hday == "23") {$Hday = "২৩শে";}
+elseif($Hday == "24") {$Hday = "২৪শে";}
+elseif($Hday == "25") {$Hday = "২৫শে";}
+elseif($Hday == "26") {$Hday = "২৬শে";}
+elseif($Hday == "27") {$Hday = "২৭শে";}
+elseif($Hday == "28") {$Hday = "২৮শে";}
+elseif($Hday == "29") {$Hday = "২৯শে";}
+elseif($Hday == "30") {$Hday = "৩০শে";}
+elseif($Hday == "31") {$Hday = "৩১শে";}
+
+$Hmonth = $d->date("M");
+
+if($Hmonth == "Muh") {$Hmonth = "মহররম";}
+elseif($Hmonth == "Saf") {$Hmonth = "সফর"; }
+elseif($Hmonth == "Rb1") {$Hmonth = "রবিউল-আউআল";}
+elseif($Hmonth == "Rb2") {$Hmonth = "রবিউস-সানি";}
+elseif($Hmonth == "Jm1") {$Hmonth = "জমাদিউল-আউআল";}
+elseif($Hmonth == "Jm2") {$Hmonth = "জমাদিউস-সানি";}
+elseif($Hmonth == "Raj") {$Hmonth = "রজব";}
+elseif($Hmonth == "Shb") {$Hmonth = "সাবান";}
+elseif($Hmonth == "Rmd") {$Hmonth = "রমজান";}
+elseif($Hmonth == "Shw") {$Hmonth = "শাওয়াল";}
+elseif($Hmonth == "DhQ") {$Hmonth = "জিলক্বদ";}
+elseif($Hmonth == "DhH") {$Hmonth = "জিলহজ্জ";}
+
+$hijridate = $Hday . " " . $Hmonth . ", " . bn_number($d->date("Y")) . " হিজরী";
+return $hijridate;
+}
+
+
 function widget_bangla_date_display($args) {
 extract($args);
 ?>
@@ -1085,8 +1144,9 @@ extract($args);
 <?php echo $before_title . 'আজকের দিন-তারিখ' . $after_title; ?>
 <ul>
 <li><?php echo do_shortcode('[bangla_day]'); ?> ( <?php echo do_shortcode('[bangla_time]'); ?> )</li>
-<li><?php echo do_shortcode('[bangla_date]'); ?></li>
 <li><?php echo do_shortcode('[english_date]'); ?></li>
+<li><?php echo do_shortcode('[hijri_date]'); ?></li>
+<li><?php echo do_shortcode('[bangla_date]'); ?> ( <?php echo do_shortcode('[bangla_season]'); ?> )</li>
 </ul>
 <?php echo $after_widget; ?>
 <?php
@@ -1102,5 +1162,6 @@ add_shortcode('bangla_day', 'bn_day');
 add_shortcode('bangla_date', 'bangla_date_function');
 add_shortcode('bangla_season', 'bn_season');
 add_shortcode('english_date', 'bn_en_date');
+add_shortcode('hijri_date', 'bn_hijri_date');
 
 ?>
