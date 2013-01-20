@@ -4,7 +4,7 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: "Bangla Date Display" is a simple and easy to use plugin that allows you to show current bangla, english and hijri date in bangla language anywhere in your blog with some extra features!
 Author: M.A. IMRAN
-Version: 5.0
+Version: 5.1
 Author URI: http://facebook.com/imran2w
 */
 
@@ -1121,9 +1121,9 @@ $Hmonth = $d->date("M");
 
 if($Hmonth == "Muh") {$Hmonth = "মহররম";}
 elseif($Hmonth == "Saf") {$Hmonth = "সফর"; }
-elseif($Hmonth == "Rb1") {$Hmonth = "রবিউল-আউআল";}
+elseif($Hmonth == "Rb1") {$Hmonth = "রবিউল-আউয়াল";}
 elseif($Hmonth == "Rb2") {$Hmonth = "রবিউস-সানি";}
-elseif($Hmonth == "Jm1") {$Hmonth = "জমাদিউল-আউআল";}
+elseif($Hmonth == "Jm1") {$Hmonth = "জমাদিউল-আউয়াল";}
 elseif($Hmonth == "Jm2") {$Hmonth = "জমাদিউস-সানি";}
 elseif($Hmonth == "Raj") {$Hmonth = "রজব";}
 elseif($Hmonth == "Shb") {$Hmonth = "সাবান";}

@@ -14,9 +14,9 @@ wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 
 echo '<div class="wrap">' ?> <?php screen_icon(); ?><h2>Bangla Date Display Plugin Options</h2>
 <br/>
-<div class="postbox" style="display: block;width:325px;float:left;margin:10px;clear:left;">
+<div class="postbox" style="display: block;width:350px;float:left;margin:10px;clear:left;">
 	<h3 class="hndle" style="padding:5px;"><span>About "Bangla Date Display" Plugin</span></h3>
-<div class="inside"><p align="justify">"Bangla Date Display" is a simple and easy to use wordpress plugin that allows you to show bangla, english and hijri date in bangla language! anywhere in your very own wordpress blog with some extra features.</p></div></div>
+<div class="inside"><p align="justify">"Bangla Date Display" is a simple and easy to use wordpress plugin that allows you to show bangla, english and hijri date in bangla language! anywhere in your very own wordpress blog with some extra features.</p><div style="text-align: right;"><a href="http://facebook.com/islamicmediabd"><img src="http://i-onlinemedia.net/images/find-us-on-facebook.png" alt="Join with us"></a></div></div></div>
 
 <div class="postbox" style="display: block;float:left;margin:10px;clear:left;">
 	<h3 class="hndle" style="padding:5px;"><span>Widget Usage Instructions</span></h3>

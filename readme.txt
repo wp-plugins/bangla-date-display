@@ -6,7 +6,7 @@ Requires at least: 2.8
 Tested up to: 3.5
 Stable tag: trunk
 
-Easily display current Bangla date (from bengali calendar), English and Hijri date in bangla language anywhere in your very own wordpress blog!
+Easily display current Bangla date (according to bengali calendar), English and Hijri date in bangla language anywhere in your wordpress blog!
 
 
 == Description == 
@@ -20,9 +20,9 @@ Install and activate the plugin. Then go to your "Dashboard > Settings > Bangla 
 = 
 
 Features: =
-- Bangla date
-- Hijri Date
-- English date
+- Bangla date (According to Bengali calendar)
+- Hijri Date (According to Hijri calendar)
+- English date (According to Gregorian calendar)
 - Name of the day
 - Bangla time (special)
 - Name of the current season of Bangladesh
@@ -31,7 +31,7 @@ Features: =
 
 = Speciality =
 * Easy to use widget and shortcodes!
-* Everything in Bangla Language!
+* Date/time output in Bangla Language!
 * No special configuration or, knowledge required!
 * Automatic GMT+6 (Dhaka, Bangladesh) time and date.
 
@@ -45,6 +45,10 @@ Features: =
 
 == Changelog ==
 
+
+= 5.1 =
+* Hijri month name's spelling mistake fixed.
+* Hijri date calculator bug fixed.
 
 = 5.0 =
 * New feature: Hijri date.
