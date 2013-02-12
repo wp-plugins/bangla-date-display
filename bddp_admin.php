@@ -13,18 +13,18 @@ wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 }
 
 echo '<div class="wrap">' ?> <?php screen_icon(); ?><h2>Bangla Date Display Plugin Options</h2>
-<br/>
-<div class="postbox" style="display: block;width:350px;float:left;margin:10px;clear:left;">
+<br/><div style="width: 60%; float: left;">
+<div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>About "Bangla Date Display" Plugin</span></h3>
-<div class="inside"><p align="justify">"Bangla Date Display" is a simple and easy to use wordpress plugin that allows you to show bangla, english and hijri date in bangla language! anywhere in your very own wordpress blog with some extra features.</p><div style="text-align: right;"><a href="http://facebook.com/islamicmediabd"><img src="http://i-onlinemedia.net/images/find-us-on-facebook.png" alt="Join with us"></a></div></div></div>
+<div class="inside"><p align="justify">"Bangla Date Display" is a simple and easy to use wordpress plugin. Using this very simple plugin on your wordpress blog/site you can show current time, name of the day, name of the current season of Bangladesh, bangla, english (gregorian) & hijri date, different types of monthly bangla calendar etc in Bangla language!</p></div></div>
 
-<div class="postbox" style="display: block;float:left;margin:10px;clear:left;">
+<div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Widget Usage Instructions</span></h3>
 <div class="inside">
-To use Bangla Date Display widget, go to "Appearance > Widgets". Just drag and drop Bangla Date Display widget on your theme's sidebar. Thats all!
+<p align="justify">Go to "Appearance > Widgets". Then drag and drop widgets on your theme's sidebar to activate them. Available widgets are: Bangla Date Display, Monthly Calendar (Bangla), Monthly Calendar (Bangla + Gregorian).</p>
 </div></div>
 
-<div class="postbox" style="display: block;float:left;margin:10px;clear:left;">
+<div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Shortcode Usage Instructions</span></h3>
 <div class="inside">
 <p> <b>Put these shortcodes in your blog post/page:</b><br/>
@@ -40,6 +40,10 @@ To use Bangla Date Display widget, go to "Appearance > Widgets". Just drag and d
 - Show current time: <code><span style="color: #000000"><span style="color: #0000BB"> &#91;bangla_time&#93;</span></span></code><br/>
 
 - Show name of the current season: <code><span style="color: #000000"><span style="color: #0000BB"> &#91;bangla_season&#93;</span></span></code><br/>
+
+- Monthly Calendar (Bangla): <code><span style="color: #000000"><span style="color: #0000BB"> &#91;bn_calendar&#93;</span></span></code><br/>
+
+- Monthly Calendar (Bangla + Gregorian): <code><span style="color: #000000"><span style="color: #0000BB"> &#91;en_bn_calendar&#93;</span></span></code><br/>
 </p><p>
 <b> Or, insert these php codes in your sidebar or any other template file:</b><br/>
 <br/>
@@ -60,25 +64,58 @@ To use Bangla Date Display widget, go to "Appearance > Widgets". Just drag and d
 <br/><br/>
 - Show name of the current season: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_season&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
 </code>
+<br/><br/>
+- Monthly Calendar (Bangla): <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bn_calendar&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
+</code>
+<br/><br/>
+- Monthly Calendar (Bangla + Gregorian): <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;en_bn_calendar&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
+</code>
 </p></div></div>
-<div class="postbox" style="display: block;float:left;margin:10px;clear:left;">
+<div class="postbox" style="display: block;float:left;margin:5px;clear:left;width: 99%;">
 <div class="inside">
-<b>Credits:</b><br/>
-<p>  Developer: <a href="http://facebook.com/imran2w">M.A. IMRAN</a></p><p>  E-Mail: imran2w@gmail.com</p>
-<p>  Website: <a href="http://www.i-onlinemedia.net">www.i-onlinemedia.net</a></p>
-<b>License:</b><br/>
-<p align="justify">    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA</p>
+<p align="justify">This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA</p>
 </div></div>
+</div>
+
+
+<div style="width: 30%; float: right;">
+<div class="postbox" style="display: block; float: right; margin: 5px; clear: right; width: 99%;">
+<div class="inside">
+<a href="http://facebook.com/islamicmediabd"><img src="http://i-onlinemedia.net/images/find-us-on-facebook.png" alt="Join with us"></a><br/><hr/>
+<p align="justify">Developing this awesome plugin took a lot of effort and time, months and months of continuous voluntary unpaid work. This plugin is free and always will be! But, if you like this plugin then, we will request you to join our <a href="http://facebook.com/islamicmediabd">facebook fan page</a> to help support future updates and development.</p>
+</div></div>
+
+<div class="postbox" style="display: block; float: right; margin: 5px; clear: right; width: 99%;">
+	<h3 class="hndle" style="padding:5px;"><span>Need Help?</span></h3>
+<div class="inside">
+<p>Got something to say?<br/>
+<a href="http://wordpress.org/support/plugin/bangla-date-display">View Support Forum</a><br/></p></div></div>
+
+
+<div class="postbox" style="display: block; float: right; margin: 5px; clear: right; width: 99%;">
+	<h3 class="hndle" style="padding:5px;"><span>Credits</span></h3>
+<div class="inside">
+<p>Developer: <a href="http://facebook.com/imran2w">M.A. IMRAN</a><br/>
+E-Mail: imran2w@gmail.com<br/>
+Website: <a href="http://www.i-onlinemedia.net">www.i-onlinemedia.net</a></p>
+</div></div>
+
+<div class="postbox" style="display: block; float: right; margin: 5px; clear: right; width: 99%;">
+	<h3 class="hndle" style="padding:5px;"><span>Plugin Info</span></h3>
+<div class="inside">
+<p>Current Version: 6.0<br/>
+Scripts: PHP + JavaScript.<br/>
+Requires: Wordpress 2.5 or higher and PHP 4 or higher.<br/>
+<a href="http://wordpress.org/extend/plugins/bangla-date-display/faq/">FAQ</a> | <a href="http://wordpress.org/extend/plugins/bangla-date-display/changelog/">Changelog</a><br/></p>
+</div></div>
+
+<div class="postbox" style="display: block; float: right; margin: 5px; clear: right; width: 99%;">
+	<h3 class="hndle" style="padding:5px;"><span>Other Plugins</span></h3>
+<div class="inside">
+<p><a href="http://wordpress.org/extend/plugins/hijri-calendar">Hijri Calendar</a><br/>
+Hijri (islamic) date and calendar related plugin. Visit plugin page for more information.<br/></p>
+</div></div>
+</div>
 </div>
 <?php
 }
