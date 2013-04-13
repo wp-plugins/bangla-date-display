@@ -1,19 +1,6 @@
 <?php
-/ * Example of Use:
- *
- * Initialize/set the time:
- * $bn = new BanglaDate(strtotime('18-03-1988'), 0);
- * or
- * $bn = new BanglaDate(time(), 6);
- * or
- * $bn = new BanglaDate(time());
- *
- * Get Output
- * $output = $bn->get_date();
- * print_r($output);
- */
 
-#**********************************************************************
+#*********************************************************************
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -62,11 +49,12 @@ class BanglaDate
 	*/
 	function BanglaDate($timestamp, $hour = 6)
 	{
-		$this->engDate = date('d', $timestamp);
-		$this->engMonth = date('m', $timestamp);
-		$this->engYear = date('Y', $timestamp);
+$offset=6*60*60; //converting 6 hours to seconds.
+		$this->engDate = gmdate('d', time()+$offset);
+		$this->engMonth = gmdate('m', time()+$offset);
+		$this->engYear = gmdate('Y', time()+$offset);
 		$this->morning = $hour;
-		$this->engHour = date('G', $timestamp);
+		$this->engHour = gmdate('G', time()+$offset);
 		
 		//calculate the bangla date
 		$this->calculate_date();
@@ -870,9 +858,12 @@ class BanglaDate
 	 *
 	 * @return array of converted Bangla Date
 	 */
-	function get_date()
+	function get_day()	{		return array($this->bangDate);	}
+function get_month_year()	{		return array($this->bangMonth, $this->bangYear);	}
+	function get_month()
 	{
-		return array($this->bangDate, $this->bangMonth, $this->bangYear);
+		return array($this->bangMonth);
 	}
 }
+
 ?>
