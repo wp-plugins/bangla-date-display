@@ -15,7 +15,7 @@ Easily display current Bangla date (according to bengali calendar), English and 
 
 = Usage =
 
-Install and activate the plugin. Then go to your "Bangla Date Display > Usage" for detail usage instructions.
+Install and activate the plugin. Then go to your Dashboard, then "BN Date Display > Usage" for detail usage instructions.
 
 
 = Features: =
@@ -46,6 +46,9 @@ Install and activate the plugin. Then go to your "Bangla Date Display > Usage" f
 
 
 == Changelog ==
+
+= 7.1 =
+* Hijri Date Adjustment option added.
 
 = 7.0 =
 * "Bangla Date" output format updated: Added a comma (,) after month name.
@@ -113,7 +116,7 @@ Install and activate the plugin. Then go to your "Bangla Date Display > Usage" f
 1. Upload the whole plugin folder to your /wp-content/plugins/ folder.
 2. Or, Go to: "Dashboard > Plugins > Add New" and search for "Bangla Date Display"
 3. Install and activate the plugin.
-4. Go to: Bangla Date Display > Usage
+4. Go to: BN Date Display > Usage
 
 
 == License ==

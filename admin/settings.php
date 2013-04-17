@@ -16,7 +16,7 @@ elseif($bddp_option2 == "") { $bddp_option2 = "Disabled"; $color2 = "red"; }
 
 <br/><div style="width: 60%; float: left;">
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
-	<h3 class="hndle" style="padding:5px;"><span>Choose Options</span></h3>
+	<h3 class="hndle" style="padding:5px;"><span>Translation Options</span></h3>
 <div class="inside"><div><p align="justify">Want to translate/convert/display post/page's default (english) time, date & comment count, archive calendar etc in bangla language? Its very easy! Just Enable and Save Changes your options below...</p>
     <table class="form-table">
         <tr valign="top">
@@ -31,6 +31,29 @@ elseif($bddp_option2 == "") { $bddp_option2 = "Disabled"; $color2 = "red"; }
     <?php submit_button(); ?>
 </form></div>
 <div style="background-color: white; color: red; text-align: justify; padding: 3px; margin: 3px; border: green solid 1px;"><b>Important!</b> If you are using any other plugin which converts time, date etc in bangla language then, please deactivate that plugin first before enabling any option. Otherwise two same functionality plugins may cause php fatal error.</div>
+</div></div>
+
+<div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
+	<h3 class="hndle" style="padding:5px;"><span>Hijri Date Adjustment</span></h3>
+<div class="inside"><div><p align="justify">Here you can adjust hijri date output. For example, if you want to minus two days, input 48 hours and Save Changes.</p>
+
+<form method="post" action="options.php">
+    <?php
+settings_fields( 'bddp-settings-group' );
+
+$bddp_option3 = get_option('bddp_option3');
+if($bddp_option3 == "") { $bddp_option3 = "0"; }
+?>
+    <table class="form-table">
+        <tr valign="top">
+        <th scope="row">Minus Hours:</th>
+        <td>-<input type="text" name="bddp_option3" size="3" value="<?php echo $bddp_option3; ?>"></td><td> Status: -<?php echo $bddp_option3; if($bddp_option3 == "0") { echo " Hour"; }
+elseif($bddp_option3 == "1") { echo " Hour"; }
+else { echo " Hours"; } ?></td>
+        </tr>
+    </table>
+    <?php submit_button(); ?>
+</form></div>
 </div></div>
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">

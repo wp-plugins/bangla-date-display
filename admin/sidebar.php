@@ -43,7 +43,7 @@ Website: <a href="http://www.i-onlinemedia.net">www.i-onlinemedia.net</a></p>
 	<h3 class="hndle" style="padding:5px;"><span>Plugin Info</span></h3>
 <div class="inside">
 <p>Price: Free!<br/>
-Version: 7.0<br/>
+Version: 7.1<br/>
 Scripts: PHP + JS.<br/>
 Requires: Wordpress 2.8+<br/>
 First release: 15-Dec-2012<br/>

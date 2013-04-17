@@ -4,7 +4,7 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: "Bangla Date Display" is a simple and easy to use plugin that allows you to show current bangla, english and hijri date in bangla language anywhere in your blog! Also available translation options to display post/page's default time & date, comment count, archive calendar etc in bangla language.
 Author: M.A. IMRAN
-Version: 7.0
+Version: 7.1
 Author URI: http://facebook.com/imran2w
 */
 
@@ -214,10 +214,14 @@ return $bangla_date;
 
 function bddp_bn_hijri_date() {
 
+$bddp_option_f3 = get_option('bddp_option3');
+if($bddp_option_f3 == "") { $bddp_option_f3 = "0"; }
+$offset2 = $bddp_option_f3 * 60 * 60;
+
 include "uCal.class.php";
 $d = new uCal;
 
-$Hday = $d->date("j");
+$Hday = $d->date("j", time()-$offset2);
 
 if($Hday == "1") {$Hday = "১লা"; }
 elseif($Hday == "2") {$Hday = "২রা";}
@@ -251,7 +255,7 @@ elseif($Hday == "29") {$Hday = "২৯শে";}
 elseif($Hday == "30") {$Hday = "৩০শে";}
 elseif($Hday == "31") {$Hday = "৩১শে";}
 
-$Hmonth = $d->date("M");
+$Hmonth = $d->date("M", time()-$offset2);
 
 if($Hmonth == "Muh") {$Hmonth = "মহররম";}
 elseif($Hmonth == "Saf") {$Hmonth = "সফর"; }
@@ -266,7 +270,7 @@ elseif($Hmonth == "Shw") {$Hmonth = "শাওয়াল";}
 elseif($Hmonth == "DhQ") {$Hmonth = "জিলক্বদ";}
 elseif($Hmonth == "DhH") {$Hmonth = "জিলহজ্জ";}
 
-$hijridate = $Hday . " " . $Hmonth . ", " . bn_number($d->date("Y")) . " হিজরী";
+$hijridate = $Hday . " " . $Hmonth . ", " . bn_number($d->date("Y", time()-$offset2)) . " হিজরী";
 return $hijridate;
 }
 
