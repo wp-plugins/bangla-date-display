@@ -47,6 +47,9 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 
 == Changelog ==
 
+= 7.2 =
+* Bangla season name's spelling mistake fixed.
+
 = 7.1 =
 * Hijri Date Adjustment option added.
 
