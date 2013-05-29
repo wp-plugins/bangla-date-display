@@ -4,7 +4,7 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: "Bangla Date Display" is a simple and easy to use plugin that allows you to show current bangla, english and hijri date in bangla language anywhere in your blog! Also available translation options to display post/page's default time & date, comment count, archive calendar etc in bangla language.
 Author: M.A. IMRAN
-Version: 7.1
+Version: 7.2
 Author URI: http://facebook.com/imran2w
 */
 
@@ -116,20 +116,18 @@ $bn = new BanglaDate(time(), 0);
 $bdtmonth = $bn->get_month();
 $month = sprintf( '%s', implode( ' ', $bdtmonth ) );
 
-$season = $month;
-
-if($season == "বৈশাখ") {$season = "গ্রীষ্মকাল"; }
-elseif($season == "জৈষ্ঠ") {$season = "গ্রীষ্মকাল";}
-elseif($season == "আষাঢ়") {$season = "বর্ষাকাল";}
-elseif($season == "শ্রাবণ") {$season = "বর্ষাকাল";}
-elseif($season == "ভাদ্র") {$season = "শরৎকাল";}
-elseif($season == "আশ্বিন") {$season = "শরৎকাল";}
-elseif($season == "কার্তিক") {$season = "হেমন্তকাল";}
-elseif($season == "অগ্রহায়ণ") {$season = "হেমন্তকাল";}
-elseif($season == "পৌষ") {$season = "শীতকাল";}
-elseif($season == "মাঘ") {$season = "শীতকাল";}
-elseif($season == "ফাল্গুন") {$season = "বসন্তকাল";}
-elseif($season == "চৈত্র") {$season = "বসন্তকাল";}
+if($month == "বৈশাখ") {$season = "গ্রীষ্মকাল"; }
+elseif($month == "জ্যৈষ্ঠ") {$season = "গ্রীষ্মকাল";}
+elseif($month == "আষাঢ়") {$season = "বর্ষাকাল";}
+elseif($month == "শ্রাবণ") {$season = "বর্ষাকাল";}
+elseif($month == "ভাদ্র") {$season = "শরৎকাল";}
+elseif($month == "আশ্বিন") {$season = "শরৎকাল";}
+elseif($month == "কার্তিক") {$season = "হেমন্তকাল";}
+elseif($month == "অগ্রহায়ণ") {$season = "হেমন্তকাল";}
+elseif($month == "পৌষ") {$season = "শীতকাল";}
+elseif($month == "মাঘ") {$season = "শীতকাল";}
+elseif($month == "ফাল্গুন") {$season = "বসন্তকাল";}
+elseif($month == "চৈত্র") {$season = "বসন্তকাল";}
 
 echo $season;
 
