@@ -2,9 +2,9 @@
 /*
 Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
-Description: "Bangla Date Display" is a simple and easy to use plugin that allows you to show current bangla, english and hijri date in bangla language anywhere in your blog! Also available translation options to display post/page's default time & date, comment count, archive calendar etc in bangla language.
+Description: A very simple, smart and easy to use plugin that allows you to show current bangla, english/gregorian and hijri date in bangla language anywhere in your site! Also available translation options to display post/page's time, date, comment count, archive calendar etc in bangla language.
 Author: M.A. IMRAN
-Version: 7.2
+Version: 7.3
 Author URI: http://facebook.com/imran2w
 */
 
@@ -118,7 +118,7 @@ $month = sprintf( '%s', implode( ' ', $bdtmonth ) );
 
 if($month == "বৈশাখ") {$season = "গ্রীষ্মকাল"; }
 elseif($month == "জ্যৈষ্ঠ") {$season = "গ্রীষ্মকাল";}
-elseif($month == "আষাঢ়") {$season = "বর্ষাকাল";}
+elseif($month == "আষাঢ়") {$season = "বর্ষাকাল";}
 elseif($month == "শ্রাবণ") {$season = "বর্ষাকাল";}
 elseif($month == "ভাদ্র") {$season = "শরৎকাল";}
 elseif($month == "আশ্বিন") {$season = "শরৎকাল";}
@@ -262,8 +262,8 @@ elseif($Hmonth == "Rb2") {$Hmonth = "রবিউস-সানি";}
 elseif($Hmonth == "Jm1") {$Hmonth = "জমাদিউল-আউয়াল";}
 elseif($Hmonth == "Jm2") {$Hmonth = "জমাদিউস-সানি";}
 elseif($Hmonth == "Raj") {$Hmonth = "রজব";}
-elseif($Hmonth == "Shb") {$Hmonth = "সাবান";}
-elseif($Hmonth == "Rmd") {$Hmonth = "রমজান";}
+elseif($Hmonth == "Shb") {$Hmonth = "শাবান";}
+elseif($Hmonth == "Rmd") {$Hmonth = "রমযান";}
 elseif($Hmonth == "Shw") {$Hmonth = "শাওয়াল";}
 elseif($Hmonth == "DhQ") {$Hmonth = "জিলক্বদ";}
 elseif($Hmonth == "DhH") {$Hmonth = "জিলহজ্জ";}
@@ -274,9 +274,9 @@ return $hijridate;
 
 
 function bddp_header_content() {
-
-include "bncalendar.inc.js";
-include "style.inc.css";
+?>
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/bncalendar.inc.js"></script>
+<?php include "style.inc.css";
 }
 
 function bddp_bn_calendar() {

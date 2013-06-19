@@ -1,16 +1,16 @@
 === Bangla Date Display ===
 Contributors: M.A. IMRAN
 Developer link: http://facebook.com/imran2w
-Tags: Bangla, Bengali, Bangla Date, Bangla Calendar, Bangladesh, Bangla Time, Hijri Date
+Tags: Bangla, Bengali, Bangla Date, Bangla Calendar, Bangla Archive Calendar, Bangladesh, Bangla Time, Bangla Season, Hijri Date
 Requires at least: 2.8
 Tested up to: 3.5
 Stable tag: trunk
 
-Easily display current Bangla date (according to bengali calendar), English and Hijri date in bangla language anywhere in your wordpress blog!
+Easily display current Bangla, English/Gregorian and Hijri date in bangla language anywhere in your wordpress site!
 
 
 == Description == 
-"Bangla Date Display" is a simple and easy to use wordpress plugin. Using this very simple plugin on your wordpress blog/site you can show current time, name of the day, name of the current season of Bangladesh, bangla, english (gregorian) & hijri date, different types of monthly bangla calendar etc in Bangla language! Options available for displaying post/page's default (english) time, date & comment count, archive calendar etc in bangla language!
+"Bangla Date Display" is a simple, smart and easy to use wordpress plugin. Using this very simple plugin on your wordpress blog/site you can show current time, name of the day, name of the current season of Bangladesh, bangla, english (gregorian) & hijri date, different types of monthly bangla calendar etc in Bangla language! Options available for displaying post/page's default (english) time, date, comment count, archive calendar etc in bangla language!
 
 
 = Usage =
@@ -28,13 +28,13 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 - Monthly Calendar (Bangla)
 - Monthly Calendar (Bangla + Gregorian)
 - Server Information tool.
-- Options for displaying post/page's default (english) time, date & comment count, archive calendar etc in bangla language!
+- Options for displaying post/page's default (english) time, date, comment count, archive calendar etc in bangla language!
 ...and more!
 
 = Speciality =
 * Built-in functionality.
 * Easy to use widgets and shortcodes!
-* Date/time output in Bangla Language!
+* All date/time output in Bangla Language!
 * No special configuration or, knowledge required!
 * Automatic GMT+6 (Dhaka, Bangladesh) time and date.
 
@@ -46,6 +46,13 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 
 
 == Changelog ==
+
+= 7.3 =
+= (15-06-2013) =
+* Bangla season name output bug fixed.
+* Hijri month name's spelling mistake fixed.
+* Header area JS code updated.
+* Settings page updated.
 
 = 7.2 =
 * Bangla season name's spelling mistake fixed.

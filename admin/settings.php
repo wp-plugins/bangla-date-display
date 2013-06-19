@@ -1,5 +1,10 @@
 <div class="wrap">
 <h2><img src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/images/icon4.png" alt=""> Bangla Date Display Plugin Settings</h2>
+
+<?php if ( isset($_GET['settings-updated']) && $_GET['settings-updated'] == 'true' ) { 
+echo '<div id="message" class="updated"><p>'. __('Settings saved.') .'</p></div>'.PHP_EOL;
+} ?>
+
 <form method="post" action="options.php">
     <?php
 settings_fields( 'bddp-settings-group' );
