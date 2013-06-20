@@ -1,4 +1,5 @@
-<script type="text/javascript">
+﻿//Bangla calendar added to "Basic Calendar Java Script" -By Brian Gosselin @ http://scriptasylum.com
+//and Bangla calendar created by Uttam Singha @ http://www.usingha.com
 var mn = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 function buildCal(m, y, cM, cH, cDW, cD, brdr){
 var bnum=['&#2535;']
@@ -15,7 +16,7 @@ todaydate.setTime(todaydate.getTime() + (todaydate.getTimezoneOffset() + 360) * 
 var scanfortoday=(y==todaydate.getFullYear() && m==todaydate.getMonth()+1)? todaydate.getDate() : 0 //DD added
 
 dim[1]=(((oD.getFullYear()%100!=0)&&(oD.getFullYear()%4==0))||(oD.getFullYear()%400==0))?29:28;
-var t='<div class="'+cM+'"><table class="'+cM+'" cols="7" cellpadding="0" border="'+brdr+'" cellspacing="0"><tr align="center"><td colspan="2">'+beng_month_name[bcal1[1]]+'</td><td colspan="3">'+ byy + '</td><td colspan="2">' + beng_month_name[bcal[1]] + '</td><tr align="center">';
+var t='<div class="'+cM+'"><table class="'+cM+'" cols="7" cellpadding="0" border="'+brdr+'" cellspacing="0"><tr align="center"><td colspan="2">'+beng_bc_month_name[bcal1[1]]+'</td><td colspan="3">'+ byy + '</td><td colspan="2">' + beng_bc_month_name[bcal[1]] + '</td><tr align="center">';
 t+='<td colspan="7" align="center" class="'+cH+'">'+mn[m-1]+' - '+y+'</td></tr><tr align="center">';
 t+='<tr align="center"><td>রবি</td>	<td>সোম</td><td>মঙ্গল</td><td>বুধ</td><td>বৃহঃ</td><td>শুক্র</td><td>শনি</td></tr><tr align="center">';
 for(s=0;s<7;s++)t+='<td class="'+cDW+'">'+"SMTWTFS".substr(s,1)+'</td>';
@@ -32,27 +33,27 @@ if(((i)%7==0)&&(i<36))t+='</tr><tr align="center">';
 }
 return t+='</tr></table></div>';
 }
-var beng_month_name = new Array;
-beng_month_name[1] 		= "বৈশাখ";
-beng_month_name[2] 		= "জ্যৈষ্ঠ";
-beng_month_name[3] 		= "আষাঢ়";
-beng_month_name[4] 		= "শ্রাবণ";
-beng_month_name[5] 		= "ভাদ্র";
-beng_month_name[6] 		= "আশ্বিন";
-beng_month_name[7] 		= "কার্তিক";
-beng_month_name[8] 		= "অগ্রহায়ন";
-beng_month_name[9] 		= "পৌষ";
-beng_month_name[10] 		= "মাঘ";
-beng_month_name[11] 		= "ফাল্গুন";
-beng_month_name[12] = "চৈত্র";
+var beng_bc_month_name = new Array;
+beng_bc_month_name[1] 		= "বৈশাখ";
+beng_bc_month_name[2] 		= "জ্যৈষ্ঠ";
+beng_bc_month_name[3] 		= "আষাঢ়";
+beng_bc_month_name[4] 		= "শ্রাবণ";
+beng_bc_month_name[5] 		= "ভাদ্র";
+beng_bc_month_name[6] 		= "আশ্বিন";
+beng_bc_month_name[7] 		= "কার্তিক";
+beng_bc_month_name[8] 		= "অগ্রহায়ন";
+beng_bc_month_name[9] 		= "পৌষ";
+beng_bc_month_name[10] 		= "মাঘ";
+beng_bc_month_name[11] 		= "ফাল্গুন";
+beng_bc_month_name[12] = "চৈত্র";
 
-var bmonth_len = "";
+var bbc_month_len = "";
 
 
-var Weekdays = new Array( "Sunday", "Monday", "Tuesday", "Wednesday",
+var Weekbc_days = new Array( "Sunday", "Monday", "Tuesday", "Wednesday",
                           "Thursday", "Friday", "Saturday");
-var bWeekdays = new Array("রবি", "সোম", "মঙ্গল", "বুধ", "বৃহস্পতি", "শুক্র", "শনি", "রবি");
-var bWeekdays1 = new Array("রবি", "সোম", "মঙ্গল", "বুধ", "বৃহ:", "শুক্র", "শনি", "রবি");
+var bWeekbc_days = new Array("রবি", "সোম", "মঙ্গল", "বুধ", "বৃহস্পতি", "শুক্র", "শনি", "রবি");
+var bWeekbc_days1 = new Array("রবি", "সোম", "মঙ্গল", "বুধ", "বৃহ:", "শুক্র", "শনি", "রবি");
 
 
 function convert(str) {
@@ -85,18 +86,18 @@ return outj1;
 
 var mas_len = [0, 30.92569444, 62.63289352, 94.00184028, 125.4761458, 156.4885417, 186.9247338, 216.8066667, 246.3155787, 275.6427546, 305.0935301, 334.9103588, 365.2587564814815];
 
-function ModernDate_to_Julianeday(eyear, emonth, eday) {
+function ModernDate_to_Julianeday(eyear, ebc_month, eday) {
     var julian_eday;
 
-    if (emonth < 3) {
+    if (ebc_month < 3) {
         eyear = eyear - 1;
-        emonth = emonth + 12;
+        ebc_month = ebc_month + 12;
     }
 
-    julian_eday = Math.floor((365.25 * eyear)) + Math.floor(30.59 * (emonth - 2)) + eday + 1721086.5;
+    julian_eday = Math.floor((365.25 * eyear)) + Math.floor(30.59 * (ebc_month - 2)) + eday + 1721086.5;
     if (eyear < 0) {
         julian_eday = julian_eday - 1;
-        if (((eyear % 4) == 0) && (3 <= emonth)) {
+        if (((eyear % 4) == 0) && (3 <= ebc_month)) {
             julian_eday = julian_eday + 1;
         }
     }
@@ -107,7 +108,7 @@ function ModernDate_to_Julianeday(eyear, emonth, eday) {
     return julian_eday;
 }
 
-function Bangla_Date(eyear, emonth, eday) {
+function Bangla_Date(eyear, ebc_month, eday) {
 var country = "India";
 
     var str = "";
@@ -118,7 +119,7 @@ var country = "India";
     else {
         startjd = 1938094.483733333;
     }
-    var nJD = ModernDate_to_Julianeday(eyear, emonth, eday);
+    var nJD = ModernDate_to_Julianeday(eyear, ebc_month, eday);
     if (nJD < startjd) {
         str = " Date is not appropriate.\n";
     }
@@ -127,14 +128,14 @@ var country = "India";
         var lasteyear = Math.floor(jddiff / 365.2587564814815);
         var mesh = startjd + lasteyear * 365.2587564814815;
         var lasteday = 0.0;
-        var ps, ns, bemonth, beday;
+        var ps, ns, bebc_month, beday;
         for (var i = 0; i < 12; i++) {
             ps = mesh + mas_len[i];
             ns = mesh + mas_len[i + 1];
             if ((nJD >= ps) && (nJD <= Math.floor(ns) + 1.75)) {
-                bemonth = i + 1;
+                bebc_month = i + 1;
                 beday = Math.floor(nJD - ps) + 1;
-                //bmonth_len =Math.floor(ns) + 0.5;
+                //bbc_month_len =Math.floor(ns) + 0.5;
             }
 
         }
@@ -145,26 +146,26 @@ var country = "India";
                          var nda = new Date(calData(lastday + 1).toDateString());
                          array.push((nda.getMonth()+1) + "/" + nda.getDate() + "/" + nda.getFullYear());
                      }
-                     bmonth_len = array.join(",");
+                     bbc_month_len = array.join(",");
 
         //var bar = Math.floor(nJD + 0.5) % 7 + 1;
-        //str = convert(beday) + " " + beng_month_name[bemonth] + " " + convert(lasteyear + 1) + " বঙ্গাব্দ, " + Weekedays[bar] + "বার।";
+        //str = convert(beday) + " " + beng_bc_month_name[bebc_month] + " " + convert(lasteyear + 1) + " বঙ্গাব্দ, " + Weekebc_days[bar] + "বার।";
 
     }
     //return str;
-     return new Array(lasteyear + 1, bemonth, beday);
+     return new Array(lasteyear + 1, bebc_month, beday);
 
 }
 function oneDay() {
     var now = new Date();
     now.setTime(now.getTime() + (now.getTimezoneOffset() + 360) * 60 * 1000); 
     var eday= now.getDate();
-    var emonth = now.getMonth();
+    var ebc_month = now.getMonth();
     var eyear = now.getFullYear();
-    var bcal = Bangla_Date(eyear, emonth + 1, eday);
-    var nJD = ModernDate_to_Julianeday(eyear, emonth + 1, eday);
+    var bcal = Bangla_Date(eyear, ebc_month + 1, eday);
+    var nJD = ModernDate_to_Julianeday(eyear, ebc_month + 1, eday);
     var bar = Math.floor(nJD + 0.5) % 7 + 1;
-    var str = convert(bcal[2]) + " " + beng_month_name[bcal[1]] + " " + convert((bcal[0])) + " বঙ্গাব্দ, " + bWeekdays[bar] + "বার।";
+    var str = convert(bcal[2]) + " " + beng_bc_month_name[bcal[1]] + " " + convert((bcal[0])) + " বঙ্গাব্দ, " + bWeekbc_days[bar] + "বার।";
     return str;
 }
 function formSubmit()
@@ -180,24 +181,24 @@ else
 var bdcal="";
 bdcal+='<table border="0" width="80%" id="table1" cellspacing="0" cellpadding="0">' ;
 	bdcal+='<tr valign="top">' ;
-		bdcal+='<td>' + buildCal(1, myyear, "main", "month", "daysofweek", "days", 1) + '</td>' ;
-		bdcal+='<td>' + buildCal(2, myyear, "main", "month", "daysofweek", "days", 1) + '</td>' ;
-		bdcal+='<td>' + buildCal(3, myyear, "main", "month", "daysofweek", "days", 1) + '</td>' ;
+		bdcal+='<td>' + buildCal(1, myyear, "bc_main", "bc_month", "bc_bc_daysofweek", "bc_days", 1) + '</td>' ;
+		bdcal+='<td>' + buildCal(2, myyear, "bc_main", "bc_month", "bc_bc_daysofweek", "bc_days", 1) + '</td>' ;
+		bdcal+='<td>' + buildCal(3, myyear, "bc_main", "bc_month", "bc_bc_daysofweek", "bc_days", 1) + '</td>' ;
 	bdcal+='</tr>' ;
 	bdcal+='<tr valign="top">' ;
-		bdcal+='<td>' + buildCal(4, myyear, "main", "month", "daysofweek", "days", 1) + '</td>' ;
-		bdcal+='<td>' + buildCal(5, myyear, "main", "month", "daysofweek", "days", 1) + '</td>' ;
-		bdcal+='<td>' + buildCal(6, myyear, "main", "month", "daysofweek", "days", 1) + '</td>' ;
+		bdcal+='<td>' + buildCal(4, myyear, "bc_main", "bc_month", "bc_bc_daysofweek", "bc_days", 1) + '</td>' ;
+		bdcal+='<td>' + buildCal(5, myyear, "bc_main", "bc_month", "bc_bc_daysofweek", "bc_days", 1) + '</td>' ;
+		bdcal+='<td>' + buildCal(6, myyear, "bc_main", "bc_month", "bc_bc_daysofweek", "bc_days", 1) + '</td>' ;
 	bdcal+='</tr>' ;
 	bdcal+='<tr valign="top">' ;
-		bdcal+='<td>' + buildCal(7, myyear, "main", "month", "daysofweek", "days", 1) + '</td>' ;
-		bdcal+='<td>' + buildCal(8, myyear, "main", "month", "daysofweek", "days", 1) + '</td>' ;
-		bdcal+='<td>' + buildCal(9, myyear, "main", "month", "daysofweek", "days", 1) + '</td>' ;
+		bdcal+='<td>' + buildCal(7, myyear, "bc_main", "bc_month", "bc_bc_daysofweek", "bc_days", 1) + '</td>' ;
+		bdcal+='<td>' + buildCal(8, myyear, "bc_main", "bc_month", "bc_bc_daysofweek", "bc_days", 1) + '</td>' ;
+		bdcal+='<td>' + buildCal(9, myyear, "bc_main", "bc_month", "bc_bc_daysofweek", "bc_days", 1) + '</td>' ;
 	bdcal+='</tr>' ;
 	bdcal+='<tr valign="top">' ;
-		bdcal+='<td>' + buildCal(10, myyear, "main", "month", "daysofweek", "days", 1) + '</td>' ;
-		bdcal+='<td>' + buildCal(11, myyear, "main", "month", "daysofweek", "days", 1) + '</td>' ;
-		bdcal+='<td>' + buildCal(12, myyear, "main", "month", "daysofweek", "days", 1) + '</td>' ;
+		bdcal+='<td>' + buildCal(10, myyear, "bc_main", "bc_month", "bc_bc_daysofweek", "bc_days", 1) + '</td>' ;
+		bdcal+='<td>' + buildCal(11, myyear, "bc_main", "bc_month", "bc_bc_daysofweek", "bc_days", 1) + '</td>' ;
+		bdcal+='<td>' + buildCal(12, myyear, "bc_main", "bc_month", "bc_bc_daysofweek", "bc_days", 1) + '</td>' ;
 	bdcal+='</tr>' ;
 bdcal+='</table>' ;
 document.all.vvv.innerHTML=bdcal;
@@ -220,13 +221,13 @@ b = a + 1524;
 c = floor((b - 122.1)/365.25);
 d = floor(365.25*c);
 e = floor((b - d)/30.6001);
-days = b - d - floor(30.6001*e) + f;
-kday = floor(days);
+bc_days = b - d - floor(30.6001*e) + f;
+kday = floor(bc_days);
 if(e < 13.5)kmon = e - 1;
 else kmon = e - 13;
 if(kmon > 2.5)kyear = c - 4716;
 if(kmon < 2.5)kyear = c - 4715;
-hh1 = (days - kday)*24;
+hh1 = (bc_days - kday)*24;
 khr = floor(hh1);
 kmin = hh1 - khr;
 ksek = kmin*60;
@@ -249,36 +250,36 @@ function BanglaMas() {
     var now = new Date();
     now.setTime(now.getTime() + (now.getTimezoneOffset() + 360) * 60 * 1000); 
     var day = now.getDate();
-    var month = now.getMonth();
+    var bc_month = now.getMonth();
     var year = now.getFullYear();
-    var bcal = Bangla_Date(year, month + 1, day);
+    var bcal = Bangla_Date(year, bc_month + 1, day);
     var mesh = 1938094.4629 + (bcal[0] - 1) * 365.2587564814815;
     var bar = calData(mesh + mas_len[bcal[1] - 1] + 1);
     var startingDay = bar.getDay();
     var one_day = 1000 * 60 * 60 * 24;
-    var mr = bmonth_len.split(",");
+    var mr = bbc_month_len.split(",");
     var diff = Math.ceil((new Date(mr[bcal[1]]) - new Date(mr[bcal[1] - 1])) / (one_day));
 
-    var monthLength = diff;
+    var bc_monthLength = diff;
     //bcal[2]
    var html = '<table class="gridtable">';
    html += '<tr><th colspan="7">';
-   html += beng_month_name[bcal[1]] + "&nbsp;" + convert((bcal[0])) + " বঙ্গাব্দ";
+   html += beng_bc_month_name[bcal[1]] + "&nbsp;" + convert((bcal[0])) + " বঙ্গাব্দ";
    html += '</th></tr>';
    html += '<tr>';
    for (var i = 0; i <= 6; i++) {
        html += '<td style=\"color: red; background: #99ff66; border: 1px solid black; font: 12px Siyam Rupali;\">';
-       html += bWeekdays1[i];
+       html += bWeekbc_days1[i];
        html += '</td>';
    }
    html += '</tr><tr>';
    var day = 1;
   // this loop is for is weeks (rows)
   for (var i = 0; i < 9; i++) {
-    // this loop is for weekdays (cells)
+    // this loop is for weekbc_days (cells)
     for (var j = 0; j <= 6; j++) { 
       html += '<td>';
-      if (day <= monthLength && (i > 0 || j >= startingDay)) {
+      if (day <= bc_monthLength && (i > 0 || j >= startingDay)) {
           if (day == bcal[2]) //DD added
           {
               html += 'আজ<br><font size="3" color="red">' + convert(day) + '</font><br>'; //DD added
@@ -290,8 +291,8 @@ function BanglaMas() {
   }
   html += '</td>';
 }
-// stop making rows if we've run out of days
-if (day > monthLength) {
+// stop making rows if we've run out of bc_days
+if (day > bc_monthLength) {
     break;
 } else {
     html += '</tr><tr>';
@@ -300,4 +301,3 @@ if (day > monthLength) {
 html += '</tr></table>';
 return html;
 }
-</script>

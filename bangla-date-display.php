@@ -4,7 +4,7 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: A very simple, smart and easy to use plugin that allows you to show current bangla, english/gregorian and hijri date in bangla language anywhere in your site! Also available translation options to display post/page's time, date, comment count, archive calendar etc in bangla language.
 Author: M.A. IMRAN
-Version: 7.3
+Version: 7.3.1
 Author URI: http://facebook.com/imran2w
 */
 

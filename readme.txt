@@ -47,6 +47,10 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 
 == Changelog ==
 
+= 7.3.1 =
+= (20-06-2013) =
+* Bangla Calendar and English+Bangla Calendar widget's js code updated. Now the widgets are working.
+
 = 7.3 =
 = (15-06-2013) =
 * Bangla season name output bug fixed.
