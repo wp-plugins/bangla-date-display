@@ -11,18 +11,22 @@ settings_fields( 'bddp-settings-group' );
 
 $bddp_option1 = get_option('bddp_option1');
 $bddp_option2 = get_option('bddp_option2');
+$bddp_option4 = get_option('bddp_option4');
 
 if($bddp_option1 == "Enabled") { $color1 = "green"; }
 elseif($bddp_option1 == "") { $bddp_option1 = "Disabled"; $color1 = "red"; }
 
 if($bddp_option2 == "Enabled") { $color2 = "green"; }
 elseif($bddp_option2 == "") { $bddp_option2 = "Disabled"; $color2 = "red"; }
+
+if($bddp_option4 == "Enabled") { $color4 = "green"; }
+elseif($bddp_option4 == "") { $bddp_option4 = "Disabled"; $color4 = "red"; }
 ?>
 
 <br/><div style="width: 60%; float: left;">
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Translation Options</span></h3>
-<div class="inside"><div><p align="justify">Want to translate/convert/display post/page's default (english) time, date & comment count, archive calendar etc in bangla language? Its very easy! Just Enable and Save Changes your options below...</p>
+<div class="inside"><div><p align="justify">Want to translate/convert/display post/page's default (english) time, date, comment count, dashboard numbers, archive calendar etc in bangla language? Its very easy! Just Enable and Save Changes your options below...</p>
     <table class="form-table">
         <tr valign="top">
         <th scope="row">Translate post/page/comment area's time & date and comment count:</th>
@@ -31,6 +35,10 @@ elseif($bddp_option2 == "") { $bddp_option2 = "Disabled"; $color2 = "red"; }
         <tr valign="top">
         <th scope="row">Translate default Archive Calendar:</th>
         <td><input type="checkbox" name="bddp_option2" value="Enabled" <?php if(get_option('bddp_option2')==Enabled) echo('checked="checked"'); ?>/></td><td> Status: <img src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/images/<?php echo $color2; ?>.png" alt=""> <font color="<?php echo $color2; ?>"><?php echo $bddp_option2; ?></font></td>
+        </tr>
+        <tr valign="top">
+        <th scope="row">Translate dashboard numbers:</th>
+        <td><input type="checkbox" name="bddp_option4" value="Enabled" <?php if(get_option('bddp_option4')==Enabled) echo('checked="checked"'); ?>/></td><td> Status: <img src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/images/<?php echo $color4; ?>.png" alt=""> <font color="<?php echo $color4; ?>"><?php echo $bddp_option4; ?></font></td>
         </tr>
     </table>
     <?php submit_button(); ?>

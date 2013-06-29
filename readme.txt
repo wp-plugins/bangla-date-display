@@ -10,7 +10,7 @@ Easily display current Bangla, English/Gregorian and Hijri date in bangla langua
 
 
 == Description == 
-"Bangla Date Display" is a simple, smart and easy to use wordpress plugin. Using this very simple plugin on your wordpress blog/site you can show current time, name of the day, name of the current season of Bangladesh, bangla, english (gregorian) & hijri date, different types of monthly bangla calendar etc in Bangla language! Options available for displaying post/page's default (english) time, date, comment count, archive calendar etc in bangla language!
+"Bangla Date Display" is a simple, smart and easy to use wordpress plugin. Using this very simple plugin on your wordpress blog/site you can show bangla, english (gregorian) & hijri date, different types of monthly bangla calendar, current time, name of the day, name of the current season of Bangladesh etc in Bangla language! Options available for displaying post/page's default (english) time, date, comment count, archive calendar, dashboard numbers etc in bangla language!
 
 
 = Usage =
@@ -28,8 +28,8 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 - Monthly Calendar (Bangla)
 - Monthly Calendar (Bangla + Gregorian)
 - Server Information tool.
-- Options for displaying post/page's default (english) time, date, comment count, archive calendar etc in bangla language!
-...and more!
+- Options for displaying post/page's default (english) time, date, comment count, dashboard numbers, archive calendar etc in bangla language!
+
 
 = Speciality =
 * Built-in functionality.
@@ -46,6 +46,11 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 
 
 == Changelog ==
+
+= 7.4 =
+= (29-06-2013) =
+* Bug fixed.
+* New option: translate dashboard numbers.
 
 = 7.3.1 =
 = (20-06-2013) =
@@ -202,3 +207,8 @@ Or, Use these PHP codes in your theme's sidebar or template file:
 
 == Screenshots ==
 1. Widget preview.
+2. Monthly calendar (Bangla).
+3. Monthly calendar (Bangla+gregorian).
+4. Archive calendar.
+5. Time and date.
+6. Monthly archive.

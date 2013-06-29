@@ -2,9 +2,9 @@
 /*
 Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
-Description: A very simple, smart and easy to use plugin that allows you to show current bangla, english/gregorian and hijri date in bangla language anywhere in your site! Also available translation options to display post/page's time, date, comment count, archive calendar etc in bangla language.
+Description: A very simple, smart and easy to use plugin that allows you to show current bangla, english/gregorian and hijri date in bangla language anywhere in your site! Also available translation options to display post/page's time, date, comment count, dashboard numbers, archive calendar etc in bangla language.
 Author: M.A. IMRAN
-Version: 7.3.1
+Version: 7.4
 Author URI: http://facebook.com/imran2w
 */
 
@@ -48,14 +48,7 @@ return $bangla_time;
 
 function bddp_bn_day() {
 
-$day = array( "Sat" => "শনিবার",
-"Sun" => "রবিবার",
-"Mon" => "সোমবার", 
-"Tue" => "মঙ্গলবার", 
-"Wed" => "বুধবার", 
-"Thu" => "বৃহস্পতিবার", 
-"Fri" => "শুক্রবার", 
-);
+$day = array( "Sat" => "শনিবার", "Sun" => "রবিবার", "Mon" => "সোমবার", "Tue" => "মঙ্গলবার", "Wed" => "বুধবার", "Thu" => "বৃহস্পতিবার", "Fri" => "শুক্রবার" );
 
 $offset=6*60*60; //converting 6 hours to seconds.
 $bangla_day = $day[gmdate("D", time()+$offset)];
@@ -156,52 +149,9 @@ return $number;
 
 function bddp_bn_en_date() {
 
-$month = array( "1" => "জানুয়ারি",
-"2" => "ফেব্রুয়ারি",
-"3" => "মার্চ", 
-"4" => "এপ্রিল", 
-"5" => "মে", 
-"6" => "জুন", 
-"7" => "জুলাই", 
-"8" => "আগস্ট", 
-"9" => "সেপ্টেম্বর", 
-"10" => "অক্টবর",  
-"11" => "নভেম্বর", 
-"12" => "ডিসেম্বর" 
-);
+$month = array( "1" => "জানুয়ারি", "2" => "ফেব্রুয়ারি", "3" => "মার্চ", "4" => "এপ্রিল", "5" => "মে", "6" => "জুন", "7" => "জুলাই", "8" => "আগস্ট", "9" => "সেপ্টেম্বর", "10" => "অক্টবর", "11" => "নভেম্বর", "12" => "ডিসেম্বর" );
 
-$day_number = array( "1" => "১লা",
-"2" => "২রা",
-"3" => "৩রা",
-"4" => "৪ঠা",
-"5" => "৫ই",
-"6" => "৬ই",
-"7" => "৭ই",
-"8" => "৮ই",
-"9" => "৯ই",
-"10" => "১০ই",
-"11" => "১১ই",
-"12" => "১২ই",
-"13" => "১৩ই",
-"14" => "১৪ই",
-"15" => "১৫ই",
-"16" => "১৬ই",
-"17" => "১৭ই",
-"18" => "১৮ই",
-"19" => "১৯শে",
-"20" => "২০শে",
-"21" => "২১শে",
-"22" => "২২শে",
-"23" => "২৩শে",
-"24" => "২৪শে",
-"25" => "২৫শে",
-"26" => "২৬শে",
-"27" => "২৭শে",
-"28" => "২৮শে",
-"29" => "২৯শে",
-"30" => "৩০শে",
-"31" => "৩১শে"
-);
+$day_number = array( "1" => "১লা", "2" => "২রা", "3" => "৩রা", "4" => "৪ঠা", "5" => "৫ই", "6" => "৬ই", "7" => "৭ই", "8" => "৮ই", "9" => "৯ই", "10" => "১০ই", "11" => "১১ই", "12" => "১২ই", "13" => "১৩ই", "14" => "১৪ই", "15" => "১৫ই", "16" => "১৬ই", "17" => "১৭ই", "18" => "১৮ই", "19" => "১৯শে", "20" => "২০শে", "21" => "২১শে", "22" => "২২শে", "23" => "২৩শে", "24" => "২৪শে", "25" => "২৫শে", "26" => "২৬শে", "27" => "২৭শে", "28" => "২৮শে", "29" => "২৯শে", "30" => "৩০শে", "31" => "৩১শে" );
 
 $offset=6*60*60; //converting 6 hours to seconds.
 $bangla_date = $day_number[gmdate("j", time()+$offset)] . " " . $month[gmdate("n", time()+$offset)] . ", " . bn_number(gmdate("Y", time()+$offset)) . " ইং";
@@ -366,15 +316,16 @@ add_shortcode('en_bn_calendar', 'bddp_en_bn_calendar');
 include "translator.php";
 $bddp_option_f1 = get_option('bddp_option1');
 $bddp_option_f2 = get_option('bddp_option2');
+$bddp_option_f4 = get_option('bddp_option4');
 
 if($bddp_option_f1 == "Enabled") {
-add_filter( 'get_the_time', 'bddp_en_to_bangla' );
-add_filter( 'the_date', 'bddp_en_to_bangla' );
-add_filter( 'get_the_date', 'bddp_en_to_bangla' );
 add_filter( 'comments_number', 'bddp_en_to_bangla' );
 add_filter( 'get_comment_count', 'bddp_en_to_bangla' );
-add_filter( 'get_comment_date', 'bddp_en_to_bangla' );
-add_filter( 'get_comment_time', 'bddp_en_to_bangla' );
+    add_filter('the_date', 'bddp_dtct');
+    add_filter('the_time', 'bddp_dtct');
+    add_filter('date_i18n', 'bddp_L2B', 10, 2);
+    add_filter('get_comment_date', 'bddp_dtct');
+    add_filter('get_comment_time', 'bddp_dtct');
 }
 
 if($bddp_option_f2 == "Enabled") {
@@ -382,5 +333,8 @@ add_filter( 'get_archives_link', 'bddp_en_to_bangla' );
 add_filter( 'wp_list_categories', 'bddp_en_to_bangla' );
 add_filter( 'get_calendar' , 'bddp_get_calendar_filter' , 10 , 2 );
 }
+
+if($bddp_option_f4 == "Enabled") {
+    add_filter('number_format_i18n', 'bddp_L2B', 10, 1);}
 
 ?>

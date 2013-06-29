@@ -22,6 +22,7 @@ function register_bddp_settings() {
 register_setting( 'bddp-settings-group', 'bddp_option1' );
 register_setting( 'bddp-settings-group', 'bddp_option2' );
 register_setting( 'bddp-settings-group', 'bddp_option3' );
+register_setting( 'bddp-settings-group', 'bddp_option4' );
 }
 
 include "admin/sidebar.php";
