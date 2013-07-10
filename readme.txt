@@ -6,7 +6,7 @@ Requires at least: 2.8
 Tested up to: 3.5
 Stable tag: trunk
 
-Easily display current Bangla, English/Gregorian and Hijri date in bangla language anywhere in your wordpress site!
+Easily display current Bangla, English (Gregorian) and Hijri date in bangla language anywhere in your wordpress site!
 
 
 == Description == 
@@ -22,17 +22,17 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 - Bangla date (According to Bengali calendar)
 - Hijri Date (According to Hijri calendar)
 - English date (According to Gregorian calendar)
-- Name of the day
-- Bangla time (special)
+- Bangla time
 - Name of the current season of Bangladesh
 - Monthly Calendar (Bangla)
 - Monthly Calendar (Bangla + Gregorian)
 - Server Information tool.
-- Options for displaying post/page's default (english) time, date, comment count, dashboard numbers, archive calendar etc in bangla language!
+- Options for displaying post/page's default (english) time, date, comment count, dashboard and other numbers, archive calendar etc in bangla language!
 
 
 = Speciality =
 * Built-in functionality.
+* Easy to manage options.
 * Easy to use widgets and shortcodes!
 * All date/time output in Bangla Language!
 * No special configuration or, knowledge required!
@@ -47,17 +47,18 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 
 == Changelog ==
 
-= 7.4 =
-= (29-06-2013) =
-* Bug fixed.
-* New option: translate dashboard numbers.
+= 7.4.1 (09-07-2013) =
+* Bug fixed. Settings problem solved.
 
-= 7.3.1 =
-= (20-06-2013) =
+= 7.4 (29-06-2013) =
+* Bug fixed.
+* New option: translate dashboard and other numbers.
+* More screenshots added.
+
+= 7.3.1 (20-06-2013) =
 * Bangla Calendar and English+Bangla Calendar widget's js code updated. Now the widgets are working.
 
-= 7.3 =
-= (15-06-2013) =
+= 7.3 (15-06-2013) =
 * Bangla season name output bug fixed.
 * Hijri month name's spelling mistake fixed.
 * Header area JS code updated.

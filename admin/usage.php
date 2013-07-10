@@ -1,8 +1,8 @@
 <div class="wrap"><h2><img src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/images/icon2.png" alt="i"> Bangla Date Display Plugin</h2>
-<br/><div style="width: 60%; float: left;">
+<br/><div style="width: 65%; float: left;">
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>About "Bangla Date Display" Plugin</span></h3>
-<div class="inside"><p align="justify">"Bangla Date Display" is a simple and easy to use wordpress plugin. Using this very simple plugin on your wordpress blog/site you can show current time, name of the day, name of the current season of Bangladesh, bangla, english (gregorian) & hijri date, different types of monthly bangla calendar etc in Bangla language! Options available for displaying post/page's default (english) time, date & comment count, archive calendar etc in bangla language!</p></div></div>
+<div class="inside"><p align="justify">"Bangla Date Display" is a simple, smart and easy to use wordpress plugin. Using this very simple plugin on your wordpress blog/site you can show bangla, english (gregorian) & hijri date, different types of monthly bangla calendar, current time, name of the day, name of the current season of Bangladesh etc in Bangla language! Options available for displaying post/page's default (english) time, date, comment count, archive calendar, dashboard & all other numbers in bangla language!</p></div></div>
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Widget Usage Instructions</span></h3>
@@ -11,9 +11,9 @@
 </div></div>
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
-	<h3 class="hndle" style="padding:5px;"><span>Translate default time, date, calendar etc.</span></h3>
+	<h3 class="hndle" style="padding:5px;"><span>Automatic translation feature.</span></h3>
 <div class="inside">
-<p align="justify">Want to translate/convert/display post/page's default (english) time, date & comment count, archive calendar etc in bangla language? Its very easy! Just Go to: "Bangla Date Display > Settings" enable options and Save Changes.</p>
+<p align="justify">Want to translate/convert/display post/page's default (english) time, date, comment count, archive calendar etc in bangla language? Its very easy! Just Go to: "Bangla Date Display > Settings" enable options and Save Changes.</p><p align="justify">It can also convert/translate "WP-PageNavi" and "WP-PostViews" plugin's output numbers into bangla! Just enable the option "Translate dashboard and other numbers" from settings page.</p>
 </div></div>
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">

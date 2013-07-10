@@ -48,7 +48,7 @@ function get_serverinfo_x() {
 ?>
 
 <div class="wrap"><h2><img src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/images/icon3.png" alt="i"> Server Information</h2>
-<br/><div style="width: 60%; float: left;">
+<br/><div style="width: 65%; float: left;">
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Server/System Information</span></h3>
