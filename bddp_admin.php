@@ -23,6 +23,11 @@ register_setting( 'bddp-settings-group', 'bddp_option1' );
 register_setting( 'bddp-settings-group', 'bddp_option2' );
 register_setting( 'bddp-settings-group', 'bddp_option3' );
 register_setting( 'bddp-settings-group', 'bddp_option4' );
+register_setting( 'bddp-settings-group', 'bddp_option5' );
+register_setting( 'bddp-settings-group', 'bddp_option6' );
+register_setting( 'bddp-settings-group', 'bddp_option7' );
+register_setting( 'bddp-settings-group', 'bddp_option8' );
+register_setting( 'bddp-settings-group', 'bddp_option9' );
 }
 
 include "admin/sidebar.php";

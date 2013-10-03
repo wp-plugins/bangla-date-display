@@ -7,7 +7,7 @@
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Widget Usage Instructions</span></h3>
 <div class="inside">
-<p align="justify">Go to "Appearance > Widgets". Then drag and drop widgets on your theme's sidebar to activate them. Available widgets are:<br/>1. Bangla Date Display (Today's date-time)<br/>2. Monthly Calendar (Bangla)<br/>3. Monthly Calendar (Bangla + Gregorian)</p>
+<p align="justify">Go to "Appearance > Widgets". Then drag and drop widgets on your theme's sidebar to activate them. Available widgets are:<br/>1. Bangla Date Display (Today's date-time)<br/>2. Monthly Calendar (Bangla)<br/>3. Monthly Calendar (Bangla + Gregorian)<br/>To customize widgets, go to settings page.</p>
 </div></div>
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">

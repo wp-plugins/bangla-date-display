@@ -4,7 +4,7 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: A very simple, smart and easy to use plugin that allows you to show current bangla, english/gregorian and hijri date in bangla language anywhere in your site! Also available translation options to display post/page's time, date, comment count, dashboard and other numbers, archive calendar etc in bangla language.
 Author: M.A. IMRAN
-Version: 7.4.1
+Version: 7.5
 Author URI: http://facebook.com/imran2w
 */
 
@@ -40,9 +40,7 @@ else if ($hour >= 15 && $hour <= 17) { echo "বিকাল "; }
 else if ($hour >= 18 && $hour <= 19) { echo "সন্ধ্যা "; }
 else { echo "রাত "; }
 
-$bangla_time = bn_number(gmdate("g:i", time()+$offset));
-
-return $bangla_time;
+echo bn_number(gmdate("g:i", time()+$offset));
 }
 
 
@@ -50,57 +48,25 @@ function bddp_bn_day() {
 
 $day = array( "Sat" => "শনিবার", "Sun" => "রবিবার", "Mon" => "সোমবার", "Tue" => "মঙ্গলবার", "Wed" => "বুধবার", "Thu" => "বৃহস্পতিবার", "Fri" => "শুক্রবার" );
 
-$offset=6*60*60; //converting 6 hours to seconds.
-$bangla_day = $day[gmdate("D", time()+$offset)];
-
-return $bangla_day;
+$offset=6*60*60;
+echo $day[gmdate("D", time()+$offset)];
 }
 
 function bddp_bangla_date_function() {
 
-$bn = new BanglaDate(time(), 0);
+$bddp_option6 = get_option('bddp_option6');
+if($bddp_option6 == "") { $bddp_option6 = "0"; }
+
+$bn = new BanglaDate(time(), $bddp_option6);
 $bdtday = $bn->get_day();
 $bdtmy = $bn->get_month_year();
 
-$day_n = sprintf( '%s', implode( ' ', $bdtday ) );
+$day = sprintf( '%s', implode( ' ', $bdtday ) );
 $month_year = sprintf( '%s', implode( ', ', $bdtmy ) );
 
-$day = $day_n;
+$day_number = array( "১" => "১লা", "২" => "২রা", "৩" => "৩রা", "৪" => "৪ঠা", "৫" => "৫ই", "৬" => "৬ই", "৭" => "৭ই", "৮" => "৮ই", "৯" => "৯ই", "১০" => "১০ই", "১১" => "১১ই", "১২" => "১২ই", "১৩" => "১৩ই", "১৪" => "১৪ই", "১৫" => "১৫ই", "১৬" => "১৬ই", "১৭" => "১৭ই", "১৮" => "১৮ই", "১৯" => "১৯শে", "২০" => "২০শে", "২১" => "২১শে", "২২" => "২২শে", "২৩" => "২৩শে", "২৪" => "২৪শে", "২৫" => "২৫শে", "২৬" => "২৬শে", "২৭" => "২৭শে", "২৮" => "২৮শে", "২৯" => "২৯শে", "৩০" => "৩০শে", "৩১" => "৩১শে" );
 
-if($day == "১") {$day = "১লা"; }
-elseif($day == "২") {$day = "২রা";}
-elseif($day == "৩") {$day = "৩রা";}
-elseif($day == "৪") {$day = "৪ঠা";}
-elseif($day == "৫") {$day = "৫ই";}
-elseif($day == "৬") {$day = "৬ই";}
-elseif($day == "৭") {$day = "৭ই";}
-elseif($day == "৮") {$day = "৮ই";}
-elseif($day == "৯") {$day = "৯ই";}
-elseif($day == "১০") {$day = "১০ই";}
-elseif($day == "১১") {$day = "১১ই";}
-elseif($day == "১২") {$day = "১২ই";}
-elseif($day == "১৩") {$day = "১৩ই";}
-elseif($day == "১৪") {$day = "১৪ই";}
-elseif($day == "১৫") {$day = "১৫ই";}
-elseif($day == "১৬") {$day = "১৬ই";}
-elseif($day == "১৭") {$day = "১৭ই";}
-elseif($day == "১৮") {$day = "১৮ই";}
-elseif($day == "১৯") {$day = "১৯শে";}
-elseif($day == "২০") {$day = "২০শে";}
-elseif($day == "২১") {$day = "২১শে";}
-elseif($day == "২২") {$day = "২২শে";}
-elseif($day == "২৩") {$day = "২৩শে";}
-elseif($day == "২৪") {$day = "২৪শে";}
-elseif($day == "২৫") {$day = "২৫শে";}
-elseif($day == "২৬") {$day = "২৬শে";}
-elseif($day == "২৭") {$day = "২৭শে";}
-elseif($day == "২৮") {$day = "২৮শে";}
-elseif($day == "২৯") {$day = "২৯শে";}
-elseif($day == "৩০") {$day = "৩০শে";}
-elseif($day == "৩১") {$day = "৩১শে";}
-
-echo $day; echo ' '; echo $month_year; echo ' বঙ্গাব্দ';
-
+echo $day_number[$day] . ' ' . $month_year . ' বঙ্গাব্দ';
 }
 
 function bddp_bn_season() {
@@ -109,21 +75,12 @@ $bn = new BanglaDate(time(), 0);
 $bdtmonth = $bn->get_month();
 $month = sprintf( '%s', implode( ' ', $bdtmonth ) );
 
-if($month == "বৈশাখ") {$season = "গ্রীষ্মকাল"; }
-elseif($month == "জ্যৈষ্ঠ") {$season = "গ্রীষ্মকাল";}
-elseif($month == "আষাঢ়") {$season = "বর্ষাকাল";}
-elseif($month == "শ্রাবণ") {$season = "বর্ষাকাল";}
-elseif($month == "ভাদ্র") {$season = "শরৎকাল";}
-elseif($month == "আশ্বিন") {$season = "শরৎকাল";}
-elseif($month == "কার্তিক") {$season = "হেমন্তকাল";}
-elseif($month == "অগ্রহায়ণ") {$season = "হেমন্তকাল";}
-elseif($month == "পৌষ") {$season = "শীতকাল";}
-elseif($month == "মাঘ") {$season = "শীতকাল";}
-elseif($month == "ফাল্গুন") {$season = "বসন্তকাল";}
-elseif($month == "চৈত্র") {$season = "বসন্তকাল";}
-
-echo $season;
-
+if($month == "বৈশাখ" || $month == "জ্যৈষ্ঠ") { echo "গ্রীষ্মকাল"; }
+elseif($month == "আষাঢ়" || $month == "শ্রাবণ") { echo "বর্ষাকাল"; }
+elseif($month == "ভাদ্র" || $month == "আশ্বিন") { echo "শরৎকাল"; }
+elseif($month == "কার্তিক" || $month == "অগ্রহায়ণ") { echo "হেমন্তকাল"; }
+elseif($month == "পৌষ" || $month == "মাঘ") { echo "শীতকাল"; }
+else { echo "বসন্তকাল"; }
 }
 
 
@@ -141,23 +98,17 @@ $number= str_replace("8", "৮", $number);
 $number= str_replace("9", "৯", $number);
 
 return $number;
-
-return $number;
-
 }
 
 
 function bddp_bn_en_date() {
 
-$month = array( "1" => "জানুয়ারি", "2" => "ফেব্রুয়ারি", "3" => "মার্চ", "4" => "এপ্রিল", "5" => "মে", "6" => "জুন", "7" => "জুলাই", "8" => "আগস্ট", "9" => "সেপ্টেম্বর", "10" => "অক্টবর", "11" => "নভেম্বর", "12" => "ডিসেম্বর" );
+$month = array( "1" => "জানুয়ারি", "2" => "ফেব্রুয়ারি", "3" => "মার্চ", "4" => "এপ্রিল", "5" => "মে", "6" => "জুন", "7" => "জুলাই", "8" => "আগস্ট", "9" => "সেপ্টেম্বর", "10" => "অক্টোবর", "11" => "নভেম্বর", "12" => "ডিসেম্বর" );
 
 $day_number = array( "1" => "১লা", "2" => "২রা", "3" => "৩রা", "4" => "৪ঠা", "5" => "৫ই", "6" => "৬ই", "7" => "৭ই", "8" => "৮ই", "9" => "৯ই", "10" => "১০ই", "11" => "১১ই", "12" => "১২ই", "13" => "১৩ই", "14" => "১৪ই", "15" => "১৫ই", "16" => "১৬ই", "17" => "১৭ই", "18" => "১৮ই", "19" => "১৯শে", "20" => "২০শে", "21" => "২১শে", "22" => "২২শে", "23" => "২৩শে", "24" => "২৪শে", "25" => "২৫শে", "26" => "২৬শে", "27" => "২৭শে", "28" => "২৮শে", "29" => "২৯শে", "30" => "৩০শে", "31" => "৩১শে" );
 
-$offset=6*60*60; //converting 6 hours to seconds.
-$bangla_date = $day_number[gmdate("j", time()+$offset)] . " " . $month[gmdate("n", time()+$offset)] . ", " . bn_number(gmdate("Y", time()+$offset)) . " ইং";
-
-return $bangla_date;
-
+$offset=6*60*60;
+echo $day_number[gmdate("j", time()+$offset)] . " " . $month[gmdate("n", time()+$offset)] . ", " . bn_number(gmdate("Y", time()+$offset)) . " ইং";
 }
 
 function bddp_bn_hijri_date() {
@@ -169,57 +120,15 @@ $offset2 = $bddp_option_f3 * 60 * 60;
 include "uCal.class.php";
 $d = new uCal;
 
-$Hday = $d->date("j", time()-$offset2);
+$bddp_option5 = get_option('bddp_option5');
+if ($bddp_option5 == "") { $bddp_option5 = "Asia/Dhaka"; }
+$tz = date_default_timezone_set($bddp_option5);
 
-if($Hday == "1") {$Hday = "১লা"; }
-elseif($Hday == "2") {$Hday = "২রা";}
-elseif($Hday == "3") {$Hday = "৩রা";}
-elseif($Hday == "4") {$Hday = "৪ঠা";}
-elseif($Hday == "5") {$Hday = "৫ই";}
-elseif($Hday == "6") {$Hday = "৬ই";}
-elseif($Hday == "7") {$Hday = "৭ই";}
-elseif($Hday == "8") {$Hday = "৮ই";}
-elseif($Hday == "9") {$Hday = "৯ই";}
-elseif($Hday == "10") {$Hday = "১০ই";}
-elseif($Hday == "11") {$Hday = "১১ই";}
-elseif($Hday == "12") {$Hday = "১২ই";}
-elseif($Hday == "13") {$Hday = "১৩ই";}
-elseif($Hday == "14") {$Hday = "১৪ই";}
-elseif($Hday == "15") {$Hday = "১৫ই";}
-elseif($Hday == "16") {$Hday = "১৬ই";}
-elseif($Hday == "17") {$Hday = "১৭ই";}
-elseif($Hday == "18") {$Hday = "১৮ই";}
-elseif($Hday == "19") {$Hday = "১৯শে";}
-elseif($Hday == "20") {$Hday = "২০শে";}
-elseif($Hday == "21") {$Hday = "২১শে";}
-elseif($Hday == "22") {$Hday = "২২শে";}
-elseif($Hday == "23") {$Hday = "২৩শে";}
-elseif($Hday == "24") {$Hday = "২৪শে";}
-elseif($Hday == "25") {$Hday = "২৫শে";}
-elseif($Hday == "26") {$Hday = "২৬শে";}
-elseif($Hday == "27") {$Hday = "২৭শে";}
-elseif($Hday == "28") {$Hday = "২৮শে";}
-elseif($Hday == "29") {$Hday = "২৯শে";}
-elseif($Hday == "30") {$Hday = "৩০শে";}
-elseif($Hday == "31") {$Hday = "৩১শে";}
+$day_number = array( "1" => "১লা", "2" => "২রা", "3" => "৩রা", "4" => "৪ঠা", "5" => "৫ই", "6" => "৬ই", "7" => "৭ই", "8" => "৮ই", "9" => "৯ই", "10" => "১০ই", "11" => "১১ই", "12" => "১২ই", "13" => "১৩ই", "14" => "১৪ই", "15" => "১৫ই", "16" => "১৬ই", "17" => "১৭ই", "18" => "১৮ই", "19" => "১৯শে", "20" => "২০শে", "21" => "২১শে", "22" => "২২শে", "23" => "২৩শে", "24" => "২৪শে", "25" => "২৫শে", "26" => "২৬শে", "27" => "২৭শে", "28" => "২৮শে", "29" => "২৯শে", "30" => "৩০শে", "31" => "৩১শে" );
 
-$Hmonth = $d->date("M", time()-$offset2);
+$month_name = array( "Muh" => "মহররম", "Saf" => "সফর", "Rb1" => "রবিউল-আউয়াল", "Rb2" => "রবিউস-সানি", "Jm1" => "জমাদিউল-আউয়াল", "Jm2" => "জমাদিউস-সানি", "Raj" => "রজব", "Shb" => "শাবান", "Rmd" => "রমযান", "Shw" => "শাওয়াল", "DhQ" => "জিলক্বদ", "DhH" => "জিলহজ্জ" );
 
-if($Hmonth == "Muh") {$Hmonth = "মহররম";}
-elseif($Hmonth == "Saf") {$Hmonth = "সফর"; }
-elseif($Hmonth == "Rb1") {$Hmonth = "রবিউল-আউয়াল";}
-elseif($Hmonth == "Rb2") {$Hmonth = "রবিউস-সানি";}
-elseif($Hmonth == "Jm1") {$Hmonth = "জমাদিউল-আউয়াল";}
-elseif($Hmonth == "Jm2") {$Hmonth = "জমাদিউস-সানি";}
-elseif($Hmonth == "Raj") {$Hmonth = "রজব";}
-elseif($Hmonth == "Shb") {$Hmonth = "শাবান";}
-elseif($Hmonth == "Rmd") {$Hmonth = "রমযান";}
-elseif($Hmonth == "Shw") {$Hmonth = "শাওয়াল";}
-elseif($Hmonth == "DhQ") {$Hmonth = "জিলক্বদ";}
-elseif($Hmonth == "DhH") {$Hmonth = "জিলহজ্জ";}
-
-$hijridate = $Hday . " " . $Hmonth . ", " . bn_number($d->date("Y", time()-$offset2)) . " হিজরী";
-return $hijridate;
+echo $day_number[$d->date("j", time()-$offset2)] . " " . $month_name[$d->date("M", time()-$offset2)] . ", " . bn_number($d->date("Y", time()-$offset2)) . " হিজরী";
 }
 
 
@@ -258,9 +167,11 @@ document.write(buildCal(curmonth ,curyear, "bc_main", "bc_month", "bc_daysofweek
 
 function widget_bangla_date_display($args) {
 extract($args);
+$bddp_option7 = get_option('bddp_option7');
+if($bddp_option7 == "") { $bddp_option7 = "আজকের দিন-তারিখ"; }
 ?>
 <?php echo $before_widget; ?>
-<?php echo $before_title . 'আজকের দিন-তারিখ' . $after_title; ?>
+<?php echo $before_title . $bddp_option7 . $after_title; ?>
 <ul>
 <li><?php echo do_shortcode('[bangla_day]'); ?> ( <?php echo do_shortcode('[bangla_time]'); ?> )</li>
 <li><?php echo do_shortcode('[english_date]'); ?></li>
@@ -273,9 +184,11 @@ extract($args);
 
 function widget_bn_calendar($args) {
 extract($args);
+$bddp_option8 = get_option('bddp_option8');
+if($bddp_option8 == "") { $bddp_option8 = "বাংলা ক্যালেন্ডার"; }
 ?>
 <?php echo $before_widget; ?>
-<?php echo $before_title . 'বাংলা ক্যালেন্ডার' . $after_title; ?>
+<?php echo $before_title . $bddp_option8 . $after_title; ?>
 <ul>
 <?php echo do_shortcode('[bn_calendar]'); ?>
 </ul>
@@ -285,9 +198,11 @@ extract($args);
 
 function widget_en_bn_calendar($args) {
 extract($args);
+$bddp_option9 = get_option('bddp_option9');
+if($bddp_option9 == "") { $bddp_option9 = "বাংলা ক্যালেন্ডার"; }
 ?>
 <?php echo $before_widget; ?>
-<?php echo $before_title . 'বাংলা ক্যালেন্ডার' . $after_title; ?>
+<?php echo $before_title . $bddp_option9 . $after_title; ?>
 <ul>
 <?php echo do_shortcode('[en_bn_calendar]'); ?>
 </ul>

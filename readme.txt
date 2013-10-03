@@ -1,7 +1,7 @@
 === Bangla Date Display ===
 Contributors: M.A. IMRAN
 Developer link: http://facebook.com/imran2w
-Tags: Bangla, Bengali, Bangla Date, Bangla Calendar, Bangla Archive Calendar, Bangladesh, Bangla Time, Bangla Season, Hijri Date
+Tags: Bangla, Bengali, Bangla Date, Bangla Calendar, Bangla Archive, Bangladesh, Bangla Time, Bangla Season, Hijri Date
 Requires at least: 2.8
 Tested up to: 3.6
 Stable tag: trunk
@@ -31,8 +31,10 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 
 
 = Speciality =
+* Very simple plugin.
 * Built-in functionality.
 * Easy to manage options.
+* Wide-range compatibility.
 * Easy to use widgets and shortcodes!
 * All date/time output in Bangla Language!
 * No special configuration or, knowledge required!
@@ -46,6 +48,18 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 
 
 == Changelog ==
+
+= 7.5 =
+* Bangla date adjustment option added.
+* Widget customization option added.
+* Hijri date calculator bug fixed.
+* Time zone adjustment option added for hijri date.
+* Hijri date default time zone changed to Asia/Dhaka.
+* Gregorian/English month name's spelling mistake fixed.
+* Some code updated.
+* Plugin icon changed.
+* Plugin banner (image) added.
+* Compatible with WP 3.6.
 
 = 7.4.1 (09-07-2013) =
 * Bug fixed. Settings problem solved.
