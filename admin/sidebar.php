@@ -43,12 +43,12 @@ Website: <a href="http://www.i-onlinemedia.net">www.i-onlinemedia.net</a></p>
 	<h3 class="hndle" style="padding:5px;"><span>Plugin Info</span></h3>
 <div class="inside">
 <p>Price: Free!<br/>
-Version: 7.5<br/>
+Version: 7.6<br/>
 Scripts: PHP + JS.<br/>
 Requires: Wordpress 2.8+<br/>
 First release: 15-Dec-2012<br/>
 Published under: <a href="http://www.gnu.org/licenses/gpl.txt">GNU General Public License</a><br/>
-<a href="http://wordpress.org/extend/plugins/bangla-date-display/faq/">FAQ</a> | <a href="http://wordpress.org/extend/plugins/bangla-date-display/changelog/">Changelog</a><br/></p>
+See also: <a href="http://wordpress.org/extend/plugins/bangla-date-display/faq/">FAQ</a> | <a href="http://wordpress.org/extend/plugins/bangla-date-display/changelog/">Changelog</a><br/></p>
 </div></div>
 
 <div class="postbox" style="display: block; float: right; margin: 5px; clear: right; width: 99%;">

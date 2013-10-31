@@ -1,6 +1,7 @@
 <?php
 
 add_action('admin_menu', 'register_bddp_menu_page');
+add_action( 'admin_init', 'register_bddp_settings' );
 define( 'BDDP_DOMAIN', 'bangla-date-display' );
 
 function register_bddp_menu_page() {
@@ -12,22 +13,10 @@ add_submenu_page(__FILE__, __('Usage', BDDP_DOMAIN ), __('Usage', BDDP_DOMAIN ),
 add_submenu_page(__FILE__, 'Settings', 'Settings', 'manage_options', 'bddp_settings', 'bddp_settings_page');
 
 add_submenu_page(__FILE__, 'Server Information', 'Server Information', 'add_users', 'bddp_server_info', 'bddp_server_info_menu');
-
-add_action( 'admin_init', 'register_bddp_settings' );
 }
 
 function register_bddp_settings() {
-
-//register our settings
-register_setting( 'bddp-settings-group', 'bddp_option1' );
-register_setting( 'bddp-settings-group', 'bddp_option2' );
-register_setting( 'bddp-settings-group', 'bddp_option3' );
-register_setting( 'bddp-settings-group', 'bddp_option4' );
-register_setting( 'bddp-settings-group', 'bddp_option5' );
-register_setting( 'bddp-settings-group', 'bddp_option6' );
-register_setting( 'bddp-settings-group', 'bddp_option7' );
-register_setting( 'bddp-settings-group', 'bddp_option8' );
-register_setting( 'bddp-settings-group', 'bddp_option9' );
+register_setting( 'bddp-settings-group', 'bddp_options' );
 }
 
 include "admin/sidebar.php";
@@ -52,4 +41,5 @@ wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 }
 include "admin/server_info.php";
 }
+
 ?>

@@ -413,8 +413,8 @@ function bddp_dtct( $str )
     $mergeA1 = array_merge( $enMonth, $enWeeks );
     $mergeA2 = array_merge( $bnMonth, $bnWeeks );
 
-    array_push( $mergeA1, 'am', 'pm' );
-    array_push( $mergeA2, 'পূর্বাহ্ণ', 'অপরাহ্ণ' );
+    array_push( $mergeA1, 'am', 'pm', 'st', 'th', 'nd', 'rd' );
+    array_push( $mergeA2, 'পূর্বাহ্ণ', 'অপরাহ্ণ', '', '', '', '' );
 
     return str_ireplace( $mergeA1, $mergeA2, $str );
 }
