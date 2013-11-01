@@ -4,7 +4,7 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: A very simple, smart and easy to use plugin that allows you to show current bangla, english/gregorian and hijri date in bangla language anywhere in your site! Also available translation options to display post/page's time, date, comment count, dashboard and other numbers, archive calendar etc in bangla language.
 Author: M.A. IMRAN
-Version: 7.6
+Version: 7.6.1
 Author URI: http://facebook.com/imran2w
 */
 
@@ -26,6 +26,7 @@ Author URI: http://facebook.com/imran2w
 
 # *****************************************************************
 
+include "translator.php";
 include "class.banglaDate.php";
 
 function bddp_bangla_time() {
@@ -40,17 +41,11 @@ else if ($hour >= 15 && $hour <= 17) { echo "বিকাল "; }
 else if ($hour >= 18 && $hour <= 19) { echo "সন্ধ্যা "; }
 else { echo "রাত "; }
 
-echo bn_number(gmdate("g:i", time()+$offset));
+echo en_to_bn(gmdate("g:i", time()+$offset));
 }
 
 
-function bddp_bn_day() {
-
-$day = array( "Sat" => "শনিবার", "Sun" => "রবিবার", "Mon" => "সোমবার", "Tue" => "মঙ্গলবার", "Wed" => "বুধবার", "Thu" => "বৃহস্পতিবার", "Fri" => "শুক্রবার" );
-
-$offset=6*60*60;
-echo $day[gmdate("D", time()+$offset)];
-}
+function bddp_bn_day() { echo en_to_bn(gmdate("l", time()+6*60*60)); }
 
 function bddp_bangla_date_function() {
 
@@ -87,23 +82,6 @@ else { echo "বসন্তকাল"; }
 }
 
 
-function bn_number($number) {
-
-$number= str_replace("0", "০", $number);
-$number= str_replace("1", "১", $number);
-$number= str_replace("2", "২", $number);
-$number= str_replace("3", "৩", $number);
-$number= str_replace("4", "৪", $number);
-$number= str_replace("5", "৫", $number);
-$number= str_replace("6", "৬", $number);
-$number= str_replace("7", "৭", $number);
-$number= str_replace("8", "৮", $number);
-$number= str_replace("9", "৯", $number);
-
-return $number;
-}
-
-
 function bddp_bn_en_date() {
 
   $bddp_options = get_option("bddp_options");
@@ -111,14 +89,12 @@ function bddp_bn_en_date() {
     $bddp_options = array( 'separator' => ', ', 'last_word' => '1', 'ord_suffix' => '1' ); }
 if ( $bddp_options['last_word'] == "1" ) { $last_word = " ইং"; }
 
-$month = array( "1" => "জানুয়ারি", "2" => "ফেব্রুয়ারি", "3" => "মার্চ", "4" => "এপ্রিল", "5" => "মে", "6" => "জুন", "7" => "জুলাই", "8" => "আগস্ট", "9" => "সেপ্টেম্বর", "10" => "অক্টোবর", "11" => "নভেম্বর", "12" => "ডিসেম্বর" );
-
 if ( $bddp_options['ord_suffix'] == "1" ) { $day_number = array( "1" => "১লা", "2" => "২রা", "3" => "৩রা", "4" => "৪ঠা", "5" => "৫ই", "6" => "৬ই", "7" => "৭ই", "8" => "৮ই", "9" => "৯ই", "10" => "১০ই", "11" => "১১ই", "12" => "১২ই", "13" => "১৩ই", "14" => "১৪ই", "15" => "১৫ই", "16" => "১৬ই", "17" => "১৭ই", "18" => "১৮ই", "19" => "১৯শে", "20" => "২০শে", "21" => "২১শে", "22" => "২২শে", "23" => "২৩শে", "24" => "২৪শে", "25" => "২৫শে", "26" => "২৬শে", "27" => "২৭শে", "28" => "২৮শে", "29" => "২৯শে", "30" => "৩০শে", "31" => "৩১শে" ); }
 
 elseif ( $bddp_options['ord_suffix'] == "" ) { $day_number = array( "1" => "১", "2" => "২", "3" => "৩", "4" => "৪", "5" => "৫", "6" => "৬", "7" => "৭", "8" => "৮", "9" => "৯", "10" => "১০", "11" => "১১", "12" => "১২", "13" => "১৩", "14" => "১৪", "15" => "১৫", "16" => "১৬", "17" => "১৭", "18" => "১৮", "19" => "১৯", "20" => "২০", "21" => "২১", "22" => "২২", "23" => "২৩", "24" => "২৪", "25" => "২৫", "26" => "২৬", "27" => "২৭", "28" => "২৮", "29" => "২৯", "30" => "৩০", "31" => "৩১" ); }
 
 $offset=6*60*60;
-echo $day_number[gmdate("j", time()+$offset)] . " " . $month[gmdate("n", time()+$offset)] . $bddp_options['separator'] . bn_number(gmdate("Y", time()+$offset)) . $last_word;
+echo $day_number[gmdate("j", time()+$offset)] . " " . en_to_bn(gmdate("F", time()+$offset)); echo $bddp_options['separator'] . en_to_bn(gmdate("Y", time()+$offset)) . $last_word;
 }
 
 function bddp_bn_hijri_date() {
@@ -141,7 +117,7 @@ elseif ( $bddp_options['ord_suffix'] == "" ) { $day_number = array( "1" => "১"
 
 $month_name = array( "Muh" => "মহররম", "Saf" => "সফর", "Rb1" => "রবিউল-আউয়াল", "Rb2" => "রবিউস-সানি", "Jm1" => "জমাদিউল-আউয়াল", "Jm2" => "জমাদিউস-সানি", "Raj" => "রজব", "Shb" => "শাবান", "Rmd" => "রমযান", "Shw" => "শাওয়াল", "DhQ" => "জিলক্বদ", "DhH" => "জিলহজ্জ" );
 
-echo $day_number[$d->date("j", time()-$offset2)] . " " . $month_name[$d->date("M", time()-$offset2)] . $bddp_options['separator'] . bn_number($d->date("Y", time()-$offset2)) . $last_word;
+echo $day_number[$d->date("j", time()-$offset2)] . " " . $month_name[$d->date("M", time()-$offset2)] . $bddp_options['separator'] . en_to_bn($d->date("Y", time()-$offset2)) . $last_word;
 }
 
 
@@ -244,17 +220,16 @@ if(is_admin())
    }
 
 
-include "translator.php";
 if($bddp_options['trans_dt'] == "1") {
-    add_filter('the_date', 'bddp_dtct');
-    add_filter('the_time', 'bddp_dtct');
+    add_filter('get_the_date', 'en_to_bn');
+    add_filter('get_the_time', 'en_to_bn');
 }
 
 if ( $bddp_options['trans_cmnt'] == "1" ) {
-    add_filter('get_comment_date', 'bddp_dtct');
-    add_filter('get_comment_time', 'bddp_dtct');
-    add_filter( 'comments_number', 'bddp_en_to_bangla' );
-    add_filter( 'get_comment_count', 'bddp_en_to_bangla' );
+    add_filter('get_comment_date', 'en_to_bn');
+    add_filter('get_comment_time', 'en_to_bn');
+    add_filter( 'comments_number', 'en_to_bn' );
+    add_filter( 'get_comment_count', 'en_to_bn' );
 }
 
 if($bddp_options['trans_cal'] == "1") {
@@ -264,8 +239,8 @@ add_filter( 'get_calendar' , 'bddp_get_calendar_filter' , 10 , 2 );
 }
 
 if($bddp_options['trans_num'] == "1") {
-    add_filter('number_format_i18n', 'bddp_L2B', 10, 1);
-    add_filter('date_i18n', 'bddp_L2B', 10, 2);
+    add_filter('number_format_i18n', 'en_to_bn', 10, 1);
+    add_filter('date_i18n', 'en_to_bn', 10, 2);
 }
 
 

@@ -46,6 +46,10 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 
 == Changelog ==
 
+= 7.6.1 =
+* Post/page/comment's date/time/counter translator bug fix.
+* Some unnecessary codes removed.
+
 = 7.6 =
 * Date formatting options added.
 * More new options added in "Translation Options" and "widget customization" section.

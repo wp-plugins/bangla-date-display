@@ -324,7 +324,7 @@ return $converted_exclude_links;
 
 }
 
-function bddp_dtct( $str )
+function en_to_bn( $str )
 {
     $enMonth = array ( 'lm1' => 'January',
                        'lm2' => 'February',
@@ -413,18 +413,10 @@ function bddp_dtct( $str )
     $mergeA1 = array_merge( $enMonth, $enWeeks );
     $mergeA2 = array_merge( $bnMonth, $bnWeeks );
 
-    array_push( $mergeA1, 'am', 'pm', 'st', 'th', 'nd', 'rd' );
-    array_push( $mergeA2, 'পূর্বাহ্ণ', 'অপরাহ্ণ', '', '', '', '' );
+    array_push( $mergeA1, 'am', 'pm', 'st', 'th', 'nd', 'rd', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' );
+    array_push( $mergeA2, 'পূর্বাহ্ণ', 'অপরাহ্ণ', '', '', '', '', '০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯' );
 
     return str_ireplace( $mergeA1, $mergeA2, $str );
-}
-
-function bddp_L2B( $int ) {
-
-    $latDigt = array( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 );
-    $banDigt = array( '০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯' );
-
-    return str_replace( $latDigt, $banDigt, $int );
 }
 
 ?>
