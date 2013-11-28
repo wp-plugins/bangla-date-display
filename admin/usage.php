@@ -11,9 +11,9 @@
 </div></div>
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
-	<h3 class="hndle" style="padding:5px;"><span>Automatic translation feature.</span></h3>
+	<h3 class="hndle" style="padding:5px;"><span>Automatic translation features.</span></h3>
 <div class="inside">
-<p align="justify">Want to translate/convert/display post/page's default (english) time, date, comment count, archive calendar etc in bangla language? Its very easy! Just Go to: "Bangla Date Display > Settings" enable options and Save Changes.</p><p align="justify">It can also convert/translate "WP-PageNavi" and "WP-PostViews" plugin's output numbers into bangla! Just enable the option "Translate dashboard and other numbers" from settings page.</p>
+<p align="justify">Want to translate/convert/display post/page's default (english) time, date, comment count, archive calendar etc in bangla language? Its very easy! Just Go to: "Bangla Date Display > Settings" enable options and Save Changes.</p>
 </div></div>
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">

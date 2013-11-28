@@ -4,7 +4,7 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: A very simple, smart and easy to use plugin that allows you to show current bangla, english/gregorian and hijri date in bangla language anywhere in your site! Also available translation options to display post/page's time, date, comment count, dashboard and other numbers, archive calendar etc in bangla language.
 Author: M.A. IMRAN
-Version: 7.6.1
+Version: 7.7
 Author URI: http://facebook.com/imran2w
 */
 
@@ -25,6 +25,17 @@ Author URI: http://facebook.com/imran2w
 # Online: http://www.gnu.org/licenses/gpl.txt
 
 # *****************************************************************
+
+  $bddp_options = get_option("bddp_options");
+  if (!is_array($bddp_options)) {
+    $bddp_options = array(
+        'cal_wgt' => '0',
+        'trans_dt' => '0',
+        'trans_cmnt' => '0',
+        'trans_num' => '0',
+        'trans_cal' => '0' );
+   }
+
 
 include "translator.php";
 include "class.banglaDate.php";
@@ -115,7 +126,7 @@ if ( $bddp_options['ord_suffix'] == "1" ) { $day_number = array( "1" => "১ল�
 
 elseif ( $bddp_options['ord_suffix'] == "" ) { $day_number = array( "1" => "১", "2" => "২", "3" => "৩", "4" => "৪", "5" => "৫", "6" => "৬", "7" => "৭", "8" => "৮", "9" => "৯", "10" => "১০", "11" => "১১", "12" => "১২", "13" => "১৩", "14" => "১৪", "15" => "১৫", "16" => "১৬", "17" => "১৭", "18" => "১৮", "19" => "১৯", "20" => "২০", "21" => "২১", "22" => "২২", "23" => "২৩", "24" => "২৪", "25" => "২৫", "26" => "২৬", "27" => "২৭", "28" => "২৮", "29" => "২৯", "30" => "৩০", "31" => "৩১" ); }
 
-$month_name = array( "Muh" => "মহররম", "Saf" => "সফর", "Rb1" => "রবিউল-আউয়াল", "Rb2" => "রবিউস-সানি", "Jm1" => "জমাদিউল-আউয়াল", "Jm2" => "জমাদিউস-সানি", "Raj" => "রজব", "Shb" => "শাবান", "Rmd" => "রমযান", "Shw" => "শাওয়াল", "DhQ" => "জিলক্বদ", "DhH" => "জিলহজ্জ" );
+$month_name = array( "Muh" => "মুহাররম", "Saf" => "সফর", "Rb1" => "রবিউল-আউয়াল", "Rb2" => "রবিউস-সানি", "Jm1" => "জমাদিউল-আউয়াল", "Jm2" => "জমাদিউস-সানি", "Raj" => "রজব", "Shb" => "শাবান", "Rmd" => "রমযান", "Shw" => "শাওয়াল", "DhQ" => "জিলক্বদ", "DhH" => "জিলহজ্জ" );
 
 echo $day_number[$d->date("j", time()-$offset2)] . " " . $month_name[$d->date("M", time()-$offset2)] . $bddp_options['separator'] . en_to_bn($d->date("Y", time()-$offset2)) . $last_word;
 }
@@ -205,44 +216,6 @@ elseif ($bddp_options['cal_wgt'] == "0" || $bddp_options['cal_wgt'] == "") { ech
 <?php
 }
 
-if(is_admin())
-	include 'bddp_admin.php';
-
-
-  $bddp_options = get_option("bddp_options");
-  if (!is_array($bddp_options)) {
-    $bddp_options = array(
-        'cal_wgt' => '0',
-        'trans_dt' => '0',
-        'trans_cmnt' => '0',
-        'trans_num' => '0',
-        'trans_cal' => '0' );
-   }
-
-
-if($bddp_options['trans_dt'] == "1") {
-    add_filter('get_the_date', 'en_to_bn');
-    add_filter('get_the_time', 'en_to_bn');
-}
-
-if ( $bddp_options['trans_cmnt'] == "1" ) {
-    add_filter('get_comment_date', 'en_to_bn');
-    add_filter('get_comment_time', 'en_to_bn');
-    add_filter( 'comments_number', 'en_to_bn' );
-    add_filter( 'get_comment_count', 'en_to_bn' );
-}
-
-if($bddp_options['trans_cal'] == "1") {
-add_filter( 'get_archives_link', 'bddp_en_to_bangla' );
-add_filter( 'wp_list_categories', 'bddp_en_to_bangla' );
-add_filter( 'get_calendar' , 'bddp_get_calendar_filter' , 10 , 2 );
-}
-
-if($bddp_options['trans_num'] == "1") {
-    add_filter('number_format_i18n', 'en_to_bn', 10, 1);
-    add_filter('date_i18n', 'en_to_bn', 10, 2);
-}
-
 
 if ($bddp_options['cal_wgt'] == "1") { add_action('wp_head', 'bddp_header_content'); }
 
@@ -258,5 +231,8 @@ add_shortcode('english_date', 'bddp_bn_en_date');
 add_shortcode('hijri_date', 'bddp_bn_hijri_date');
 add_shortcode('bn_calendar', 'bddp_bn_calendar');
 add_shortcode('en_bn_calendar', 'bddp_en_bn_calendar');
+
+if(is_admin())
+include 'bddp_admin.php';
 
 ?>

@@ -46,6 +46,15 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 
 == Changelog ==
 
+= 7.7 =
+* Unnecessary filters removed.
+* New date/time translation options added.
+* Bangla and hijri month name's spelling updated.
+* Widget enable/disable option added.
+* Monthly calendar widgets are disabled by default (which can be enabled in settings) to avoid usage of additional js+css files.
+* Settings updated.
+* Some code updated.
+
 = 7.6.1 =
 * Post/page/comment's date/time/counter translator bug fix.
 * Some unnecessary codes removed.
@@ -123,7 +132,6 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 * Screenshots added.
 
 = 4.0 =
-
 * New feature: Show name of the current season of Bangladesh.
 * New feature: Widget support
 * New shortcode.
@@ -133,17 +141,14 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 = 3.1 =
 * Admin page update.
 
-
 = 3.0 =
 * Bug fix.
 * New feature: Show current time in bangla.
 * Time zone updated! Now using GMT+6 (Dhaka, Bangladesh) time zone.
 * New shortcode.
 
-
 = 2.1  =
 * New date format.
-
 
 = 2.0 (16-12-2012) =
 * New feature: Show english date in bangla language.
@@ -152,9 +157,9 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 * New shortcodes.
 * Admin page update.
 
-
 = 1.0 (15-12-2012) = 
 * First release.
+* Display bangla date.
 
 == Installation ==
 

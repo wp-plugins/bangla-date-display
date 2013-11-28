@@ -54,28 +54,36 @@ elseif ( $bddp_options['trans_cal'] == "0" || $bddp_options['trans_cal'] == "" )
 <br/><div style="width: 65%; float: left;">
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Translation Options</span></h3>
-<div class="inside"><div><p align="justify">Want to translate/convert/display post/page's default (english) time, date, comment count, dashboard numbers, archive calendar etc in bangla language? Its very easy! Just Enable and Save Changes your options below...</p>
+<div class="inside"><div><p align="justify">Want to translate/convert/display post/page's default (english) time, date, comment count, dashboard numbers, archive calendar etc in bangla language? Its very easy! Just Enable options and Save Changes...</p>
     <table class="form-table">
         <tr valign="top">
-        <th scope="row">Translate post/page's time & date:</th>
-        <td><input type="checkbox" name="bddp_options[trans_dt]" value="1" <?php if($bddp_options['trans_dt']==1) echo('checked="checked"'); ?>/></td><td> Status: <img src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/images/<?php echo $color1; ?>.png" alt=""> <font color="<?php echo $color1; ?>"><?php echo $trans_dt; ?></font></td>
+        <th scope="row">Translate time & date:</th>
+        <td><select name="bddp_options[trans_dt]">
+<option value="0"<?php if($bddp_options['trans_dt'] == "0") { echo " selected"; } ?>>None</option>
+<option value="1"<?php if($bddp_options['trans_dt'] == "1") { echo " selected"; } ?>>All Time/Date (Recomended)</option>
+<option value="2"<?php if($bddp_options['trans_dt'] == "2") { echo " selected"; } ?>>Post, Page and Comment's Time/Date</option>
+</select></td>
         </tr>
         <tr valign="top">
-        <th scope="row">Translate comment date, time and comment count:</th>
+        <th scope="row">Translate comment's count/number:</th>
         <td><input type="checkbox" name="bddp_options[trans_cmnt]" value="1" <?php if($bddp_options['trans_cmnt']==1) echo('checked="checked"'); ?>/></td><td> Status: <img src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/images/<?php echo $color2; ?>.png" alt=""> <font color="<?php echo $color2; ?>"><?php echo $trans_cmnt; ?></font></td>
         </tr>
         <tr valign="top">
-        <th scope="row">Translate dashboard and all other numbers:</th>
+        <th scope="row">Translate all numbers:</th>
         <td><input type="checkbox" name="bddp_options[trans_num]" value="1" <?php if($bddp_options['trans_num']==1) echo('checked="checked"'); ?>/></td><td> Status: <img src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/images/<?php echo $color3; ?>.png" alt=""> <font color="<?php echo $color3; ?>"><?php echo $trans_num; ?></font></td>
         </tr>
         <tr valign="top">
-        <th scope="row">Translate default Archive Calendar:</th>
+        <th scope="row">Translate Archive Calendar:</th>
         <td><input type="checkbox" name="bddp_options[trans_cal]" value="1" <?php if($bddp_options['trans_cal']==1) echo('checked="checked"'); ?>/></td><td> Status: <img src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/images/<?php echo $color4; ?>.png" alt=""> <font color="<?php echo $color4; ?>"><?php echo $trans_cal; ?></font></td>
         </tr>
     </table>
     <?php submit_button(); ?>
 </div>
-<div style="background-color: white; color: red; text-align: justify; padding: 3px; margin: 3px; border: green solid 1px;"><b>Important!</b> If you are using any other plugin which converts time, date etc in bangla language then, please deactivate that plugin first before enabling any option. Otherwise two same functionality plugins may cause php fatal error.</div>
+<div style="background-color: white; color: red; text-align: justify; padding: 3px; margin: 3px; border: green solid 1px;"><?php if($bddp_options['trans_dt'] == "2") { ?><b>Important Notice:</b> You have choosen "Post, Page and Comment's Date/Time" translation option. Now it will search and replace post/page/comment's all time & date's english/latin numbers with bangla. So that, some functions, such as human_time_diff() may not work properly or output may be incorrect! If you are using human_time_diff() or such function, <strong>we recommend you to enable "All Time/Date" translation option</strong><?php } ?>
+
+<?php if($bddp_options['trans_dt'] == "1") { ?><b>Notice:</b> You have choosen "All Time/Date" translation option. Now it will translate all of wordpress time/date's in bangla including admin area. If you don't want translate time/date of admin area or just want to show post/page/comment's time/date in banga to site visitors, then you can enable "Post, Page and Comment's Time/Date" translation option.<?php } ?>
+
+<?php if($bddp_options['trans_dt'] == "0") { ?><b>Important!</b> If you are using any other plugin which converts time, date etc in bangla language then, please deactivate that plugin first before enabling any option. Otherwise two same functionality plugins may cause errors.<?php } ?></div>
 </div></div>
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
@@ -148,7 +156,7 @@ else { echo " Hours"; } ?></span></td>
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Widget Customization</span></h3>
-<div class="inside"><div><p align="left"><b>Choose items to show on "Bangla Date Display" widget:</b></p>
+<div class="inside"><div><p align="left"><b><u>Choose items to show on "Bangla Date Display" widget</u>:</b></p>
 
     <table class="form-table">
   <tr valign="top">
@@ -199,7 +207,6 @@ else { echo " Hours"; } ?></span></td>
     </table>
     <?php submit_button(); ?>
 </div>
-<div style="background-color: white; color: red; text-align: center; padding: 3px; margin: 3px; border: green solid 1px;"><b>Note:</b> Default titles will be used for empty fields.</div>
 </div></div>
 
 </form>

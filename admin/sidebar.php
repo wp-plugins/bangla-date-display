@@ -27,7 +27,7 @@ js.id = id; js.async = true;
 <div class="postbox" style="display: block; float: right; margin: 5px; clear: right; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Need Help?</span></h3>
 <div class="inside">
-<p>Got something to say?<br/>
+<p>Got something to say?<br/>Here's a plugin that's backed with active community support, where questions, ideas and suggestions are always welcomed.<br/>
 <a href="http://wordpress.org/support/plugin/bangla-date-display">View Support Forum</a><br/></p></div></div>
 
 
@@ -42,8 +42,9 @@ Website: <a href="http://www.i-onlinemedia.net">www.i-onlinemedia.net</a></p>
 <div class="postbox" style="display: block; float: right; margin: 5px; clear: right; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Plugin Info</span></h3>
 <div class="inside">
-<p>Price: Free!<br/>
-Version: 7.6.1<br/>
+<p>Name: <a href="http://wordpress.org/plugins/bangla-date-display">Bangla Date Display</a><br/>
+Price: Free!<br/>
+Version: 7.7<br/>
 Scripts: PHP + JS.<br/>
 Requires: Wordpress 2.8+<br/>
 First release: 15-Dec-2012<br/>
@@ -54,7 +55,7 @@ See also: <a href="http://wordpress.org/extend/plugins/bangla-date-display/faq/"
 <div class="postbox" style="display: block; float: right; margin: 5px; clear: right; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Other Plugins</span></h3>
 <div class="inside">
-<p><a href="http://wordpress.org/extend/plugins/hijri-calendar">Hijri Calendar</a><br/>
+<p><a href="http://wordpress.org/plugins/hijri-calendar">Hijri Calendar</a><br/>
 Hijri (islamic) date and calendar related plugin. Visit plugin page for more information.<br/></p>
 </div></div>
 </div><?php

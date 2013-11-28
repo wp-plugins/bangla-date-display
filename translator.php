@@ -1,5 +1,31 @@
 <?php
 
+if($bddp_options['trans_dt'] == "1") {
+    add_filter('date_i18n', 'en_to_bn');
+}
+
+if ( $bddp_options['trans_dt'] == "2" ) {
+    add_filter( 'get_the_date', 'en_to_bn' );
+    add_filter( 'get_the_time', 'en_to_bn' );
+    add_filter('get_comment_date', 'en_to_bn');
+    add_filter('get_comment_time', 'en_to_bn');
+}
+
+if ( $bddp_options['trans_cmnt'] == "1" ) {
+    add_filter( 'comments_number', 'en_to_bn' );
+    add_filter( 'get_comment_count', 'en_to_bn' );
+}
+
+if($bddp_options['trans_num'] == "1") {
+    add_filter('number_format_i18n', 'en_to_bn');
+}
+
+if($bddp_options['trans_cal'] == "1") {
+
+add_filter( 'get_archives_link', 'bddp_en_to_bangla' );
+add_filter( 'wp_list_categories', 'bddp_en_to_bangla' );
+add_filter( 'get_calendar' , 'bddp_get_calendar_filter' , 10 , 2 );
+
 function bddp_get_calendar($initial = false, $echo = false) {
 global $wpdb, $m, $monthnum, $year, $wp_locale, $posts;
 $cache = array();
@@ -323,6 +349,7 @@ $converted_exclude_links = replace_matches($converted, $all_converted_quotes, ar
 return $converted_exclude_links;
 
 }
+}
 
 function en_to_bn( $str )
 {
@@ -368,8 +395,8 @@ function en_to_bn( $str )
                        'sd7' => 'Fri'
                        );
 
-    $bnMonth = array ( 'lm1' => 'জানুয়ারি',
-                       'lm2' => 'ফেব্রুয়ারি',
+    $bnMonth = array ( 'lm1' => 'জানুয়ারী',
+                       'lm2' => 'ফেব্রুয়ারী',
                        'lm3' => 'মার্চ',
                        'lm4' => 'এপ্রিল',
                        'lm5' => 'মে',
