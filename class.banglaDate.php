@@ -685,7 +685,7 @@ $offset=6*60*60; //converting 6 hours to seconds.
 				if($this->engHour >= $this->morning)
 				{
 					$this->bangDate = $this->engDate - 14;
-					$this->bangMonth = "অগ্রাহায়ণ";
+					$this->bangMonth = "অগ্রহায়ণ";
 				}
 				else
 				{
@@ -698,12 +698,12 @@ $offset=6*60*60; //converting 6 hours to seconds.
 				if($this->engHour >= $this->morning)
 				{
 					$this->bangDate = $this->engDate - 14;
-					$this->bangMonth = "অগ্রহায়ণ";
+					$this->bangMonth = "অগ্রহায়ণ";
 				}
 				else 
 				{
 					$this->bangDate = $this->engDate - 15;
-					$this->bangMonth = "অগ্রহায়ণ";
+					$this->bangMonth = "অগ্রহায়ণ";
 				}
 			}
 		}
@@ -717,12 +717,12 @@ $offset=6*60*60; //converting 6 hours to seconds.
 				if($this->engHour >= $this->morning)
 				{
 					$this->bangDate = $this->engDate + 16;
-					$this->bangMonth = "অগ্রহায়ণ";
+					$this->bangMonth = "অগ্রহায়ণ";
 				}
 				else
 				{
 					$this->bangDate = $this->engDate + 15;
-					$this->bangMonth = "অগ্রহায়ণ";
+					$this->bangMonth = "অগ্রহায়ণ";
 				}
 			}
 			else if($this->engDate < 15 && $this->engDate > 1) // Date 2-14
@@ -730,12 +730,12 @@ $offset=6*60*60; //converting 6 hours to seconds.
 				if($this->engHour >=$this->morning)
 				{
 					$this->bangDate = $this->engDate + 16;
-					$this->bangMonth = "অগ্রহায়ণ";
+					$this->bangMonth = "অগ্রহায়ণ";
 				}
 				else
 				{
 					$this->bangDate = $this->engDate + 15;
-					$this->bangMonth = "অগ্রহায়ণ";
+					$this->bangMonth = "অগ্রহায়ণ";
 				}
 			}
 
@@ -749,7 +749,7 @@ $offset=6*60*60; //converting 6 hours to seconds.
 				else
 				{
 					$this->bangDate = 30;
-					$this->bangMonth = "অগ্রহায়ণ";
+					$this->bangMonth = "অগ্রহায়ণ";
 				}
 			}
 			else //Date 15-31

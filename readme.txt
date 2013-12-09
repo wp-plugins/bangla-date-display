@@ -46,6 +46,9 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 
 == Changelog ==
 
+= 7.7.1 (09-12-2013) =
+* Bug fix: wrong bangla season name.
+
 = 7.7 =
 * Unnecessary filters removed.
 * New date/time translation options added.
