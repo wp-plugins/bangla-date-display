@@ -54,26 +54,28 @@ elseif ( $bddp_options['trans_cal'] == "0" || $bddp_options['trans_cal'] == "" )
 <br/><div style="width: 65%; float: left;">
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Translation Options</span></h3>
-<div class="inside"><div><p align="justify">Want to translate/convert/display post/page's default (english) time, date, comment count, dashboard numbers, archive calendar etc in bangla language? Its very easy! Just Enable options and Save Changes...</p>
+<div class="inside"><div><p align="justify">Want to translate/convert/display post/page's default (english) time, date, comment count, dashboard numbers, archive calendar etc in bangla language? Its easy! Just Enable options and Save Changes below...</p>
     <table class="form-table">
         <tr valign="top">
-        <th scope="row">Translate time & date:</th>
+        <td>Translate time & date:</td>
         <td><select name="bddp_options[trans_dt]">
 <option value="0"<?php if($bddp_options['trans_dt'] == "0") { echo " selected"; } ?>>None</option>
 <option value="1"<?php if($bddp_options['trans_dt'] == "1") { echo " selected"; } ?>>All Time/Date (Recomended)</option>
 <option value="2"<?php if($bddp_options['trans_dt'] == "2") { echo " selected"; } ?>>Post, Page and Comment's Time/Date</option>
 </select></td>
         </tr>
+        </table>
+	<table class="form-table">
         <tr valign="top">
-        <th scope="row">Translate comment's count/number:</th>
+        <td>Translate comment's count/number:</td>
         <td><input type="checkbox" name="bddp_options[trans_cmnt]" value="1" <?php if($bddp_options['trans_cmnt']==1) echo('checked="checked"'); ?>/></td><td> Status: <img src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/images/<?php echo $color2; ?>.png" alt=""> <font color="<?php echo $color2; ?>"><?php echo $trans_cmnt; ?></font></td>
         </tr>
         <tr valign="top">
-        <th scope="row">Translate all numbers:</th>
+        <td>Translate all numbers:</td>
         <td><input type="checkbox" name="bddp_options[trans_num]" value="1" <?php if($bddp_options['trans_num']==1) echo('checked="checked"'); ?>/></td><td> Status: <img src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/images/<?php echo $color3; ?>.png" alt=""> <font color="<?php echo $color3; ?>"><?php echo $trans_num; ?></font></td>
         </tr>
         <tr valign="top">
-        <th scope="row">Translate Archive Calendar:</th>
+        <td>Translate Archive Calendar:</td>
         <td><input type="checkbox" name="bddp_options[trans_cal]" value="1" <?php if($bddp_options['trans_cal']==1) echo('checked="checked"'); ?>/></td><td> Status: <img src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/images/<?php echo $color4; ?>.png" alt=""> <font color="<?php echo $color4; ?>"><?php echo $trans_cal; ?></font></td>
         </tr>
     </table>
@@ -88,14 +90,14 @@ elseif ( $bddp_options['trans_cal'] == "0" || $bddp_options['trans_cal'] == "" )
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Bangla Date Adjustment</span></h3>
-<div class="inside"><div><p align="justify">Here you can select everyday when the bangla date will change.</p>
+<div class="inside"><div><p align="justify">Choose when everyday the date (single line bangla date only, not calendar widget) will change... 6 AM (morning) or 12 AM (midnight)</p>
 
     <table class="form-table">
         <tr valign="top">
         <th scope="row">When the date will change?</th>
         <td><select name="bddp_options[dt_change]">
-<option value="6"<?php if($bddp_options['dt_change'] == "6") { echo " selected"; } ?>>06:00 AM</option>
-<option value="0"<?php if($bddp_options['dt_change'] == "0") { echo " selected"; } ?>>12:00 AM</option>
+<option value="6"<?php if($bddp_options['dt_change'] == "6") { echo " selected"; } ?>>06:00 AM (Morning)</option>
+<option value="0"<?php if($bddp_options['dt_change'] == "0") { echo " selected"; } ?>>12:00 AM (Midnight)</option>
 </select>
 </td>
         </tr>
@@ -113,16 +115,16 @@ elseif ( $bddp_options['trans_cal'] == "0" || $bddp_options['trans_cal'] == "" )
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Hijri Date Adjustment</span></h3>
-<div class="inside"><div><p align="justify">Here you can set default time zone and adjust hijri date output. For example, if you want to minus two days, input 48 hours and Save Changes.</p>
+<div class="inside"><div><p align="justify">Set default time zone for hijri date. You can minus time from current hijri date also. For example, if you want to minus two days, input 48 hours and Save Changes.</p>
 
     <table class="form-table">
         <tr valign="top">
-        <th scope="row">Time Zone:</th>
+        <td>Time Zone:</td>
         <td><?php include "time_zones.php"; ?>
-</td><td>Current Time Zone:<br/><span style="color: green;"><?php echo $bddp_options['hijri_tz']; ?></span></td>
+</td><td>Status:<br/><span style="color: green;"><?php echo $bddp_options['hijri_tz']; ?></span></td>
         </tr>
         <tr valign="top">
-        <th scope="row">Minus Hours:</th>
+        <td>Minus Hours:</td>
         <td>-<input type="text" name="bddp_options[hijri_adjust]" size="3" value="<?php echo $bddp_options['hijri_adjust']; ?>"></td><td> Status: <span style="color: green;">-<?php echo $bddp_options['hijri_adjust']; if($bddp_options['hijri_adjust'] == "0") { echo " Hour"; }
 elseif($bddp_options['hijri_adjust'] == "1") { echo " Hour"; }
 else { echo " Hours"; } ?></span></td>
@@ -138,15 +140,15 @@ else { echo " Hours"; } ?></span></td>
 
     <table class="form-table">
         <tr valign="top">
-        <th scope="row">Date separator:</th>
+        <td>Date separator:</td>
         <td><input type="radio" name="bddp_options[separator]" value=", "<?php if($bddp_options['separator'] == ", ") { echo " checked"; } ?>> Comma (,)</td><td><input type="radio" name="bddp_options[separator]" value=" "<?php if($bddp_options['separator'] == " ") { echo " checked"; } ?>> None (space)</td>
 </tr>
         <tr valign="top">
-        <th scope="row">Show ordinal suffix (১লা, ২রা, ৩রা...):</th>
+        <td>Show ordinal suffix (১লা, ২রা, ৩রা...):</td>
         <td><input type="checkbox" name="bddp_options[ord_suffix]" value="1" <?php if($bddp_options['ord_suffix']==1) echo('checked="checked"'); ?>/></td><td></td>
         </tr>
         <tr valign="top">
-        <th scope="row">Show last word (খ্রীষ্টাব্দ, বঙ্গাব্দ, হিজরী):</th>
+        <td>Show last word (খ্রীষ্টাব্দ, বঙ্গাব্দ, হিজরী):</td>
         <td><input type="checkbox" name="bddp_options[last_word]" value="1" <?php if($bddp_options['last_word']==1) echo('checked="checked"'); ?>/></td><td></td>
         </tr>
     </table>
@@ -190,17 +192,17 @@ else { echo " Hours"; } ?></span></td>
 <p align="justify"><b><u>Set widget titles</u>:</b></p>
     <table class="form-table">
         <tr valign="top">
-        <th scope="row">Title for "<span style="color: green;">Bangla Date Display</span>" widget:</th>
+        <td>Title for "<span style="color: green;">Bangla Date Display</span>" widget:</td>
         <td><input type="text" name="bddp_options[wgt_title1]" value="<?php echo rplc_symbol($bddp_options['wgt_title1']); ?>">
 </td>
         </tr>
         <tr valign="top">
-        <th scope="row">Title for "<span style="color: green;">Monthly Calendar (Bangla)</span>" widget:</th>
+        <td>Title for "<span style="color: green;">Monthly Calendar (Bangla)</span>" widget:</td>
         <td><input type="text" name="bddp_options[wgt_title2]" value="<?php echo rplc_symbol($bddp_options['wgt_title2']); ?>">
 </td>
         </tr>
         <tr valign="top">
-        <th scope="row">Title for "<span style="color: green;">Monthly Calendar (Bangla + Gregorian)</span>" widget:</th>
+        <td>Title for "<span style="color: green;">Monthly Calendar (Bangla + Gregorian)</span>" widget:</td>
         <td><input type="text" name="bddp_options[wgt_title3]" value="<?php echo rplc_symbol($bddp_options['wgt_title3']); ?>">
 </td>
         </tr>

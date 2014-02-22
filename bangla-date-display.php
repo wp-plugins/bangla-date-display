@@ -4,7 +4,7 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: A very simple, smart and easy to use plugin that allows you to show current bangla, english/gregorian and hijri date in bangla language anywhere in your site! Also available translation options to display post/page's time, date, comment count, dashboard and other numbers, archive calendar etc in bangla language.
 Author: M.A. IMRAN
-Version: 7.7.1
+Version: 7.8
 Author URI: http://facebook.com/imran2w
 */
 
@@ -135,7 +135,9 @@ echo $day_number[$d->date("j", time()-$offset2)] . " " . $month_name[$d->date("M
 function bddp_header_content() {
 ?>
 <script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/bncalendar.inc.js"></script>
+<style type="text/css">
 <?php include "style.inc.css";
+echo "</style>";
 }
 
 function bddp_bn_calendar() {

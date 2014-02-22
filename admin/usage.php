@@ -7,7 +7,7 @@
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Widget Usage Instructions</span></h3>
 <div class="inside">
-<p align="justify">Go to "Appearance > Widgets". Then drag and drop widgets on your theme's sidebar to activate them. Available widgets are:<br/>1. Bangla Date Display (Today's date-time)<br/>2. Monthly Calendar (Bangla)<br/>3. Monthly Calendar (Bangla + Gregorian)<br/>To customize widgets, go to settings page.</p>
+<p align="justify">Go to "Appearance > Widgets". Then drag and drop widgets on your theme's sidebar to activate them.</p><p><b>Available widgets are:</b><br/>1. Bangla Date Display (Today's date-time)<br/>2. Monthly Calendar (Bangla)<br/>3. Monthly Calendar (Bangla + Gregorian)<br/>To customize widgets, go to settings page.</p>
 </div></div>
 
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
@@ -19,7 +19,7 @@
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left; width: 99%;">
 	<h3 class="hndle" style="padding:5px;"><span>Shortcode Usage Instructions</span></h3>
 <div class="inside">
-<p> <b>Put these shortcodes in your blog post/page:</b><br/>
+<p> <b>Put these shortcodes in your blog post/page:</b><br/><br/>
 
 - Show bangla date according to bangla calendar: <code><span style="color: #000000"><span style="color: #0000BB"> &#91;bangla_date&#93;</span></span></code><br/>
 
@@ -39,28 +39,28 @@
 </p><p>
 <b> Or, insert these php codes in your sidebar or any other template file:</b><br/>
 <br/>
-- Show bangla date according to bangla calendar: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_date&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
+- Show bangla date according to bangla calendar:<br/><code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_date&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
 </code>
 <br/><br/>
-- Show english/gregorian date in bangla language: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;english_date&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
+- Show english/gregorian date in bangla language:<br/><code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;english_date&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
 </code>
 <br/><br/>
-- Show Hijri date in bangla language: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;hijri_date&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
+- Show Hijri date in bangla language:<br/><code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;hijri_date&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
 </code>
 <br/><br/>
-- Show name of the day: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_day&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
+- Show name of the day:<br/><code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_day&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
 </code>
 <br/><br/>
-- Show current time: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_time&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
+- Show current time:<br/><code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_time&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
 </code>
 <br/><br/>
-- Show name of the current season: <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_season&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
+- Show name of the current season:<br/><code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bangla_season&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
 </code>
 <br/><br/>
-- Monthly Calendar (Bangla): <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bn_calendar&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
+- Monthly Calendar (Bangla):<br/><code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;bn_calendar&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
 </code>
 <br/><br/>
-- Monthly Calendar (Bangla + Gregorian): <code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;en_bn_calendar&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
+- Monthly Calendar (Bangla + Gregorian):<br/><code><span style="color: #000000"><span style="color: #0000BB">   &#60;&#63;php echo do_shortcode&#40;&#39;&#91;en_bn_calendar&#93;&#39;&#41;; </span><span style="color: #0000BB">&#63;&#62;</span></span>
 </code>
 </p></div></div>
 <div class="postbox" style="display: block;float:left;margin:5px;clear:left;width: 99%;">

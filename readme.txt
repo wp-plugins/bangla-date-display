@@ -3,7 +3,7 @@ Contributors: M.A. IMRAN
 Developer link: http://facebook.com/imran2w
 Tags: Bangla, Bengali, Bangla Date, Bangla Calendar, Bangla Archive, Bangladesh, Bangla Time, Bangla Season, Hijri Date
 Requires at least: 2.8
-Tested up to: 3.7
+Tested up to: 3.8
 Stable tag: trunk
 
 Easily display current Bangla, English (Gregorian) and Hijri date in bangla language anywhere in your wordpress site!
@@ -45,6 +45,12 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 
 
 == Changelog ==
+
+= 7.8 =
+* Calendar widgets style (css file) editor added.
+* New admin submenu "Calendar Style" under BN Date Display.
+* Plugin icons updated.
+* Compatible with WP 3.8.x.
 
 = 7.7.1 (09-12-2013) =
 * Bug fix: wrong bangla season name.
