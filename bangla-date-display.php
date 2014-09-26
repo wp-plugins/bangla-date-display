@@ -4,7 +4,7 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: A very simple, smart and easy to use plugin that allows you to show current bangla, english/gregorian and hijri date in bangla language anywhere in your site! Also available translation options to display post/page's time, date, comment count, dashboard and other numbers, archive calendar etc in bangla language.
 Author: M.A. IMRAN
-Version: 7.8
+Version: 7.9
 Author URI: http://facebook.com/imran2w
 */
 
@@ -85,7 +85,7 @@ $bdtmonth = $bn->get_month();
 $month = sprintf( '%s', implode( ' ', $bdtmonth ) );
 
 if($month == "বৈশাখ" || $month == "জ্যৈষ্ঠ") { echo "গ্রীষ্মকাল"; }
-elseif($month == "আষাঢ়" || $month == "শ্রাবণ") { echo "বর্ষাকাল"; }
+elseif($month == "আষাঢ়" || $month == "শ্রাবণ") { echo "বর্ষাকাল"; }
 elseif($month == "ভাদ্র" || $month == "আশ্বিন") { echo "শরৎকাল"; }
 elseif($month == "কার্তিক" || $month == "অগ্রহায়ণ") { echo "হেমন্তকাল"; }
 elseif($month == "পৌষ" || $month == "মাঘ") { echo "শীতকাল"; }
@@ -136,9 +136,9 @@ function bddp_header_content() {
 ?>
 <script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/bangla-date-display/bncalendar.inc.js"></script>
 <style type="text/css">
-<?php include "style.inc.css";
-echo "</style>";
-}
+<?php include "style.inc.css"; ?>
+</style>
+<?php }
 
 function bddp_bn_calendar() {
 ?>
@@ -167,6 +167,7 @@ document.write(buildCal(curmonth ,curyear, "bc_main", "bc_month", "bc_daysofweek
 <?php
 }
 
+//==================Widget 01========================
 function widget_bangla_date_display($args) {
 extract($args);
   $bddp_options = get_option("bddp_options");
@@ -188,6 +189,55 @@ if ($bddp_options['show_season'] == "1") { echo " ( "; echo do_shortcode('[bangl
 <?php
 }
 
+  function widget_bddp_control() {
+  $bddp_options = get_option("bddp_options");
+  if (!is_array($bddp_options)) { $bddp_options = array( 'wgt_title1' => 'আজকের দিন-তারিখ', 'show_day' => '1', 'show_time' => '1', 'show_en' => '1', 'show_hijri' => '1', 'show_bn' => '1', 'show_season' => '1' ); }
+
+  if($_POST['widget_control_submit'])
+  {
+    $bddp_options['wgt_title1'] = htmlspecialchars($_POST['wgt_title1']);
+    $bddp_options['show_day'] = htmlspecialchars($_POST['show_day']);
+    $bddp_options['show_time'] = htmlspecialchars($_POST['show_time']);
+    $bddp_options['show_en'] = htmlspecialchars($_POST['show_en']);
+    $bddp_options['show_hijri'] = htmlspecialchars($_POST['show_hijri']);
+    $bddp_options['show_bn'] = htmlspecialchars($_POST['show_bn']);
+    $bddp_options['show_season'] = htmlspecialchars($_POST['show_season']);
+    update_option("bddp_options", $bddp_options);
+  }
+?>
+
+    <p style="text-align: center;"><em>Developed by <a href="http://facebook.com/imran2w">M.A. IMRAN</a></em></p>
+
+<p><table width="100%">
+	<tr><td> <label for="wgt_title1">Widget Title: </label></td>
+    <td><input type="text" id="wgt_title1" name="wgt_title1" value="<?php echo $bddp_options['wgt_title1'];?>" /> </td></tr>
+
+	<tr><td> <label for="show_day">Show Day: </label> </td>
+    <td><input type="checkbox" id="show_day" name="show_day" value="1" <?php if($bddp_options['show_day']==1) echo('checked="checked"'); ?>/> </td></tr>
+
+	<tr><td> <label for="show_time">Show Time: </label> </td>
+    <td><input type="checkbox" id="show_time" name="show_time" value="1" <?php if($bddp_options['show_time']==1) echo('checked="checked"'); ?>/> </td></tr>
+
+	<tr><td> <label for="show_en">Show Gregorian Date: </label> </td>
+    <td><input type="checkbox" id="show_en" name="show_en" value="1" <?php if($bddp_options['show_en']==1) echo('checked="checked"'); ?>/></td></tr>
+
+	<tr><td> <label for="show_hijri">Show Hijri Date: </label> </td>
+    <td><input type="checkbox" id="show_hijri" name="show_hijri" value="1" <?php if($bddp_options['show_hijri']==1) echo('checked="checked"'); ?>/> </td></tr>
+
+	<tr><td> <label for="show_bn">Show Bangla Date: </label> </td>
+    <td><input type="checkbox" id="show_bn" name="show_bn" value="1" <?php if($bddp_options['show_bn']==1) echo('checked="checked"'); ?>/> </td></tr>
+
+	<tr><td> <label for="show_season">Show Season Name: </label> </td>
+    <td><input type="checkbox" id="show_season" name="show_season" value="1" <?php if($bddp_options['show_season']==1) echo('checked="checked"'); ?>/> </td></tr>
+	</table>
+
+    <input type="hidden" id="widget_control_submit"  name="widget_control_submit" value="1" />
+  </p>
+<p><span style="color: gray;">Note: You can change these settings at BN Date Display -> Settings</span></p>
+<?php
+ }
+
+//==================Widget 02====================
 function widget_bn_calendar($args) {
 extract($args);
   $bddp_options = get_option("bddp_options");
@@ -203,6 +253,33 @@ elseif ($bddp_options['cal_wgt'] == "0" || $bddp_options['cal_wgt'] == "") { ech
 <?php
 }
 
+
+  function widget_bncal_control() {
+  $bddp_options = get_option("bddp_options");
+  if (!is_array($bddp_options)) { $bddp_options = array( 'wgt_title2' => 'বাংলা পঞ্জিকা' ); }
+
+  if($_POST['widget_control_submit'])
+  {
+    $bddp_options['wgt_title2'] = htmlspecialchars($_POST['wgt_title2']);
+	$bddp_options['cal_wgt'] = htmlspecialchars($_POST['cal_wgt']);
+    update_option("bddp_options", $bddp_options);
+  }
+?>
+
+
+<p><table width="100%">
+	<tr><td> <label for="wgt_title2">Widget Title: </label></td>
+    <td><input type="text" id="wgt_title2" name="wgt_title2" value="<?php echo $bddp_options['wgt_title2'];?>" /> </td></tr>
+	</table>
+
+    <input type="hidden" id="cal_wgt"  name="cal_wgt" value="1" />
+    <input type="hidden" id="widget_control_submit"  name="widget_control_submit" value="1" />
+  </p>
+<p><span style="color: gray;">Note: You can change these settings at BN Date Display -> Settings</span></p>
+<?php
+ }
+
+//===============Widget 03======================
 function widget_en_bn_calendar($args) {
 extract($args);
   $bddp_options = get_option("bddp_options");
@@ -218,12 +295,40 @@ elseif ($bddp_options['cal_wgt'] == "0" || $bddp_options['cal_wgt'] == "") { ech
 <?php
 }
 
+  function widget_ebcal_control() {
+  $bddp_options = get_option("bddp_options");
+  if (!is_array($bddp_options)) { $bddp_options = array( 'wgt_title3' => 'বাংলা পঞ্জিকা' ); }
 
+  if($_POST['widget_control_submit'])
+  {
+    $bddp_options['wgt_title3'] = htmlspecialchars($_POST['wgt_title3']);
+	$bddp_options['cal_wgt'] = htmlspecialchars($_POST['cal_wgt']);
+    update_option("bddp_options", $bddp_options);
+  }
+?>
+
+
+<p><table width="100%">
+	<tr><td> <label for="wgt_title3">Widget Title: </label></td>
+    <td><input type="text" id="wgt_title3" name="wgt_title3" value="<?php echo $bddp_options['wgt_title3'];?>" /> </td></tr>
+	</table>
+
+    <input type="hidden" id="cal_wgt"  name="cal_wgt" value="1" />
+    <input type="hidden" id="widget_control_submit"  name="widget_control_submit" value="1" />
+  </p>
+<p><span style="color: gray;">Note: You can change these settings at BN Date Display -> Settings</span></p>
+<?php
+ }
+
+//====================================
 if ($bddp_options['cal_wgt'] == "1") { add_action('wp_head', 'bddp_header_content'); }
 
 register_sidebar_widget('Bangla Date Display', 'widget_bangla_date_display');
+register_widget_control('Bangla Date Display', 'widget_bddp_control');
 register_sidebar_widget('Monthly Calendar (Bangla)', 'widget_bn_calendar');
+register_widget_control('Monthly Calendar (Bangla)', 'widget_bncal_control');
 register_sidebar_widget('Monthly Calendar (Bangla + Gregorian)', 'widget_en_bn_calendar');
+register_widget_control('Monthly Calendar (Bangla + Gregorian)', 'widget_ebcal_control');
 
 add_shortcode('bangla_time', 'bddp_bangla_time');
 add_shortcode('bangla_day', 'bddp_bn_day');
@@ -234,7 +339,7 @@ add_shortcode('hijri_date', 'bddp_bn_hijri_date');
 add_shortcode('bn_calendar', 'bddp_bn_calendar');
 add_shortcode('en_bn_calendar', 'bddp_en_bn_calendar');
 
-if(is_admin())
-include 'bddp_admin.php';
+    if(is_admin())
+    include 'bddp_admin.php';
 
 ?>

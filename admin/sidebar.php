@@ -44,7 +44,7 @@ Website: <a href="http://www.i-onlinemedia.net">www.i-onlinemedia.net</a></p>
 <div class="inside">
 <p>Name: <a href="http://wordpress.org/plugins/bangla-date-display">Bangla Date Display</a><br/>
 Price: Free!<br/>
-Version: 7.8<br/>
+Version: 7.9<br/>
 Scripts: PHP + JS.<br/>
 Requires: Wordpress 2.8+<br/>
 First release: 15-Dec-2012<br/>

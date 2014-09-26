@@ -162,22 +162,22 @@ else { echo " Hours"; } ?></span></td>
 
     <table class="form-table">
   <tr valign="top">
-  <th scope="row">Day:</th><td><input type="checkbox" name="bddp_options[show_day]" value="1" <?php if($bddp_options['show_day']==1) echo('checked="checked"'); ?>/></td>
+  <th scope="row">Show Day:</th><td><input type="checkbox" name="bddp_options[show_day]" value="1" <?php if($bddp_options['show_day']==1) echo('checked="checked"'); ?>/></td>
   </tr>
   <tr valign="top">
-  <th scope="row">Time:</th><td><input type="checkbox" name="bddp_options[show_time]" value="1" <?php if($bddp_options['show_time']==1) echo('checked="checked"'); ?>/></td>
+  <th scope="row">Show Time:</th><td><input type="checkbox" name="bddp_options[show_time]" value="1" <?php if($bddp_options['show_time']==1) echo('checked="checked"'); ?>/></td>
   </tr>
   <tr valign="top">
-  <th scope="row">Gregorian Date:</th><td><input type="checkbox" name="bddp_options[show_en]" value="1" <?php if($bddp_options['show_en']==1) echo('checked="checked"'); ?>/></td>
+  <th scope="row">Show Gregorian Date:</th><td><input type="checkbox" name="bddp_options[show_en]" value="1" <?php if($bddp_options['show_en']==1) echo('checked="checked"'); ?>/></td>
   </tr>
   <tr valign="top">
-  <th scope="row">Hijri Date:</th><td><input type="checkbox" name="bddp_options[show_hijri]" value="1" <?php if($bddp_options['show_hijri']==1) echo('checked="checked"'); ?>/></td>
+  <th scope="row">Show Hijri Date:</th><td><input type="checkbox" name="bddp_options[show_hijri]" value="1" <?php if($bddp_options['show_hijri']==1) echo('checked="checked"'); ?>/></td>
   </tr>
   <tr valign="top">
-  <th scope="row">Bangla Date:</th><td><input type="checkbox" name="bddp_options[show_bn]" value="1" <?php if($bddp_options['show_bn']==1) echo('checked="checked"'); ?>/></td>
+  <th scope="row">Show Bangla Date:</th><td><input type="checkbox" name="bddp_options[show_bn]" value="1" <?php if($bddp_options['show_bn']==1) echo('checked="checked"'); ?>/></td>
   </tr>
   <tr valign="top">
-  <th scope="row">Season Name:</th><td><input type="checkbox" name="bddp_options[show_season]" value="1" <?php if($bddp_options['show_season']==1) echo('checked="checked"'); ?>/></td>
+  <th scope="row">Show Season Name:</th><td><input type="checkbox" name="bddp_options[show_season]" value="1" <?php if($bddp_options['show_season']==1) echo('checked="checked"'); ?>/></td>
   </tr>
 </table>
 
