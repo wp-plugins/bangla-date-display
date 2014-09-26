@@ -48,7 +48,8 @@ Install and activate the plugin. Then go to your Dashboard, then "BN Date Displa
 
 = 7.9 =
 * Change widget settings directly from widget menu. (new)
-* Compatible with WP 3.9.x
+* New plugin icon.
+* Compatible with WP 4.0
 * Ongoing improvements.
 
 = 7.8 =
