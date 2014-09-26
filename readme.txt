@@ -3,7 +3,7 @@ Contributors: M.A. IMRAN
 Developer link: http://facebook.com/imran2w
 Tags: Bangla, Bengali, Bangla Date, Bangla Calendar, Bangla Archive, Bangladesh, Bangla Time, Bangla Season, Hijri Date
 Requires at least: 2.8
-Tested up to: 4
+Tested up to: 4.0
 Stable tag: trunk
 
 Easily display current Bangla, English (Gregorian) and Hijri date in bangla language anywhere in your wordpress site!
