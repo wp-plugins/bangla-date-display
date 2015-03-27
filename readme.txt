@@ -155,4 +155,4 @@ Yes! Its free! And alwayes will be!
 4. Archive calendar.
 5. Time and date.
 6. Monthly archive.
-7. Admin panel.
+7. Admin panel preview.
