@@ -1,0 +1,36 @@
+﻿.bc_main {
+width:99%;
+border:1px solid black;
+}
+
+.bc_month {
+background-color:black;
+font:bold 12px verdana, SolaimanLipi;
+color:white;
+}
+
+.bc_daysofweek {
+background-color:gray;
+font:bold 12px verdana, SolaimanLipi;
+color:white;
+}
+
+.bc_days {
+font-size: 12px;
+font-family:verdana, SolaimanLipi;
+color:black;
+background-color: lightyellow;
+padding: 2px;
+}
+
+.bc_days #bangla{
+font-size: 10px;
+text-align:left;
+font-family:verdana, SolaimanLipi;
+color: green;
+}
+
+.bc_days #today{
+font-weight: bold;
+color: red;
+}
