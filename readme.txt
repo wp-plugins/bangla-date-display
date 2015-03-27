@@ -63,7 +63,7 @@ Displays Bangla, Gregorian and Hijri date, time, different types of monthly bang
 
 == Installation ==
 
-*Method#1:
+* Method#1:
 1. Navigate to: Plugins -> Add new -> Search.
 2. Search for "Bangla Date Display".
 3. Install and activate plugin.
@@ -155,4 +155,4 @@ Yes! Its free! And alwayes will be!
 4. Archive calendar.
 5. Time and date.
 6. Monthly archive.
-7. Admin panel.
+7. Admin panel preview.
