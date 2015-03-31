@@ -158,4 +158,4 @@ Yes! Its free! And alwayes will be!
 3. Monthly calendar (Bangla+gregorian).
 4. Archive calendar.
 5. Time and date.
-6. Admin panel preview.
+6. Settings page.
