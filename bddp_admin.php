@@ -375,6 +375,7 @@ function register_bddp_settings() {
 	register_setting( 'bddp-settings-group', 'bddp_options' );
 }
 
+
 	add_action('admin_menu', 'bddp_admin');
 	add_action('admin_init', 'register_bddp_settings');
 	add_filter('contextual_help', 'bddp_help', 10, 3);

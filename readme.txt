@@ -46,6 +46,10 @@ Displays Bangla, Gregorian and Hijri date, time, different types of monthly bang
 
 == Changelog ==
 
+= 8.1 =
+* Added settings link on plugins page.
+* Ongoing improvements.
+
 = 8.0 =
 * Spelling update.
 * Widget update.
