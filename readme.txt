@@ -46,6 +46,9 @@ Displays Bangla, Gregorian and Hijri date, time, different types of monthly bang
 
 == Changelog ==
 
+= 8.2 =
+* Bug fixed.
+
 = 8.1 =
 * Added settings link on plugins page.
 * Ongoing improvements.
@@ -158,4 +161,5 @@ Yes! Its free! And alwayes will be!
 3. Monthly calendar (Bangla+gregorian).
 4. Archive calendar.
 5. Time and date.
-6. Settings page.
+6. Archive.
+7. Settings page.

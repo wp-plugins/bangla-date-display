@@ -21,8 +21,8 @@ if($bddp_options['trans_num'] == "1") {
 }
 
 if($bddp_options['trans_cal'] == "1") {
-	add_filter('get_archives_link', 'en_to_bn');
-	add_filter('wp_list_categories', 'en_to_bn');
+	add_filter('get_archives_link', 'bddp_en_to_bangla');
+	add_filter('wp_list_categories', 'bddp_en_to_bangla');
 	add_filter('get_calendar', 'bddp_get_calendar_filter', 10 , 2);
 	
 	function bddp_get_calendar($initial = false, $echo = false) {
