@@ -102,7 +102,7 @@ class uCal {
 		$m=$i-12*$ii; // month
 		$d=$mjd-$this->jdl[$i-1]; //day
 		$ml=$this->jdl[$i]-$this->jdl[$i-1];// Month Length
-		list ($id[month], $id[day], $id[year], $id[ln], $id[ml]) = explode("/","$m/$d/$y/$iln/$ml");
+		list ($id['month'], $id['day'], $id['year'], $id['ln'], $id['ml']) = explode("/","$m/$d/$y/$iln/$ml");
 		return ($id);
 	}
       /**
