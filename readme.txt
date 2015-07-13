@@ -3,7 +3,7 @@ Contributors: imran2w
 Developer link: http://facebook.com/imran2w
 Tags: Bangla, Bengali, Bangla Date, Bangla Calendar, Bangla Archive, Bangladesh, Bangla Time, Bangla Season, Hijri Date
 Requires at least: 2.8
-Tested up to: 4.2
+Tested up to: 4.3
 Stable tag: trunk
 
 Displays Bangla, Gregorian & Hijri date in bangla language via widgets and shortcodes!
@@ -45,6 +45,9 @@ Displays Bangla, Gregorian and Hijri date, time, different types of monthly bang
 
 
 == Changelog ==
+
+= 8.2.1 =
+* Bug fixed.
 
 = 8.2 =
 * Bug fixed.
