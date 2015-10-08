@@ -2,6 +2,8 @@
 
 // by Tareq Hasan
 
+	defined( 'ABSPATH' ) or die( 'Stop! You can not do this!' );
+
 class BanglaDate
 {
 	private $timestamp;	//timestamp as input
@@ -33,7 +35,12 @@ class BanglaDate
 	*/
 	function BanglaDate($timestamp, $hour = 6)
 	{
-$offset=6*60*60; //converting 6 hours to seconds.
+		$bddp_options = get_option("bddp_options");
+		if (!is_array($bddp_options)) {
+			$bddp_options = array( 'bangla_tz' => '6' ); }
+			
+		$offset= $bddp_options['bangla_tz']*60*60;
+			
 		$this->engDate = gmdate('d', time()+$offset);
 		$this->engMonth = gmdate('m', time()+$offset);
 		$this->engYear = gmdate('Y', time()+$offset);

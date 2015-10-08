@@ -3,7 +3,7 @@ Contributors: imran2w
 Developer link: http://facebook.com/imran2w
 Tags: Bangla, Bengali, Bangla Date, Bangla Calendar, Bangla Archive, Bangladesh, Bangla Time, Bangla Season, Hijri Date
 Requires at least: 2.8
-Tested up to: 4.3
+Tested up to: 4.4
 Stable tag: trunk
 
 Displays Bangla, Gregorian & Hijri date in bangla language via widgets and shortcodes!
@@ -46,29 +46,18 @@ Displays Bangla, Gregorian and Hijri date, time, different types of monthly bang
 
 == Changelog ==
 
-= 8.2.1 =
-* Bug fixed.
-
-= 8.2 =
-* Bug fixed.
-
-= 8.1 =
-* Added settings link on plugins page.
+= 8.4 =
+* Complete uninstall feature added.
+* Plugin file access denied.
+* Time zone option removed from Hijri Date Adjustment. Because it affects human_time_diff function.
 * Ongoing improvements.
 
-= 8.0 =
-* Spelling update.
-* Widget update.
-* Deprecated widget functions replaced by new functions. Important!
-* Admin panel improvements.
-* Admin panel moved to: Settings -> Bangla Date Display.
+= 8.3 =
+* Time zone changing option added for bangla and gregorian calndar.
+* Hijri date adjustment option updated.
 * Ongoing improvements.
-* Tested compatibility with WP 4.2.
-* Admin panel screenshot added.
-* Style editor removed. Unnecessary!
-* Server information page removed. Unnecessary!
 
-= 1.0 - 7.9 =
+= 1.0 - 8.2 =
 * Many changes and improvements.
 
 == Installation ==

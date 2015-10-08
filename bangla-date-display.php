@@ -4,7 +4,7 @@ Plugin Name: Bangla Date Display
 Plugin URI: http://i-onlinemedia.net/
 Description: Displays Bangla, Gregorian and Hijri date in bangla language via widgets and shortcodes! Options for displaying post/page's time, date, comment count, archive calendar etc in Bangla language.
 Author: M.A. IMRAN
-Version: 8.2.1
+Version: 8.4
 Author URI: http://facebook.com/imran2w
 */
 
@@ -13,6 +13,8 @@ This program is free software; you can redistribute it and/or modify it under th
 */
 
 // Bismillah...
+
+	defined( 'ABSPATH' ) or die( 'Stop! You can not do this!' );
 
   $bddp_options = get_option("bddp_options");
   if (!is_array($bddp_options)) {
@@ -29,8 +31,12 @@ include "translator.php";
 include "class.banglaDate.php";
 
 function bddp_bangla_time() {
+	
+	$bddp_options = get_option("bddp_options");
+	if (!is_array($bddp_options)) {
+		$bddp_options = array( 'bangla_tz' => '6' ); }
 
-	$offset=6*60*60; //converting 6 hours to seconds.
+	$offset= $bddp_options['bangla_tz']*60*60; //converting hours to seconds.
 	$hour = gmdate("G", time()+$offset);
 	
 	if ($hour >= 5 && $hour <= 5) { echo "ভোর "; }
@@ -44,7 +50,13 @@ function bddp_bangla_time() {
 	}
 
 
-function bddp_bn_day() { echo en_to_bn(gmdate("l", time()+6*60*60)); }
+function bddp_bn_day() {
+	$bddp_options = get_option("bddp_options");
+	if (!is_array($bddp_options)) {
+		$bddp_options = array( 'bangla_tz' => '6' ); }
+		
+	echo en_to_bn(gmdate("l", time()+$bddp_options['bangla_tz']*60*60));
+	}
 
 function bddp_bangla_date() {
 
@@ -68,7 +80,11 @@ function bddp_bangla_date() {
 
 
 function bddp_bn_season() {
-	$bn = new BanglaDate(time(), 0);
+	$bddp_options = get_option("bddp_options");
+	if (!is_array($bddp_options)) {
+		$bddp_options = array( 'bangla_tz' => '6' ); }
+	
+	$bn = new BanglaDate(time()+$bddp_options['bangla_tz']*60*60, 0);
 	$bdtmonth = $bn->get_month();
 	$month = sprintf( '%s', implode( ' ', $bdtmonth ) );
 	
@@ -86,6 +102,7 @@ function bddp_bn_en_date() {
     $bddp_options = get_option("bddp_options");
     if (!is_array($bddp_options)) {
 		$bddp_options = array(
+		'en_tz' => '6',
 		'separator' => ', ',
 		'last_word' => '1',
 		'ord_suffix' => '1' );
@@ -97,7 +114,7 @@ function bddp_bn_en_date() {
 	
 	elseif ( $bddp_options['ord_suffix'] == "" ) { $day_number = array( "1" => "১", "2" => "২", "3" => "৩", "4" => "৪", "5" => "৫", "6" => "৬", "7" => "৭", "8" => "৮", "9" => "৯", "10" => "১০", "11" => "১১", "12" => "১২", "13" => "১৩", "14" => "১৪", "15" => "১৫", "16" => "১৬", "17" => "১৭", "18" => "১৮", "19" => "১৯", "20" => "২০", "21" => "২১", "22" => "২২", "23" => "২৩", "24" => "২৪", "25" => "২৫", "26" => "২৬", "27" => "২৭", "28" => "২৮", "29" => "২৯", "30" => "৩০", "31" => "৩১" ); }
 	
-	$offset=6*60*60;
+	$offset = $bddp_options['en_tz']*60*60;
 	echo $day_number[gmdate("j", time()+$offset)] . " " . en_to_bn(gmdate("F", time()+$offset)); echo $bddp_options['separator'] . en_to_bn(gmdate("Y", time()+$offset)) . $last_word;
 }
 
@@ -106,8 +123,7 @@ function bddp_bn_hijri_date() {
     $bddp_options = get_option("bddp_options");
     if (!is_array($bddp_options)) {
 		$bddp_options = array(
-		'hijri_adjust' => '24',
-		'hijri_tz' => 'Asia/Dhaka',
+		'hijri_adjust' => '-0',
 		'separator' => ', ',
 		'last_word' => '1',
 		'ord_suffix' => '1' );
@@ -115,12 +131,10 @@ function bddp_bn_hijri_date() {
 		
 	if ( $bddp_options['last_word'] == "1" ) { $last_word = " হিজরী"; }
 	
-	$offset2 = $bddp_options['hijri_adjust'] * 60 * 60;
+	$offset = $bddp_options['hijri_adjust'] * 60 * 60;
 	
 	include "uCal.class.php";
 	$d = new uCal;
-	
-	$tz = date_default_timezone_set($bddp_options['hijri_tz']);
 	
 	if ( $bddp_options['ord_suffix'] == "1" ) { $day_number = array( "1" => "১লা", "2" => "২রা", "3" => "৩রা", "4" => "৪ঠা", "5" => "৫ই", "6" => "৬ই", "7" => "৭ই", "8" => "৮ই", "9" => "৯ই", "10" => "১০ই", "11" => "১১ই", "12" => "১২ই", "13" => "১৩ই", "14" => "১৪ই", "15" => "১৫ই", "16" => "১৬ই", "17" => "১৭ই", "18" => "১৮ই", "19" => "১৯শে", "20" => "২০শে", "21" => "২১শে", "22" => "২২শে", "23" => "২৩শে", "24" => "২৪শে", "25" => "২৫শে", "26" => "২৬শে", "27" => "২৭শে", "28" => "২৮শে", "29" => "২৯শে", "30" => "৩০শে", "31" => "৩১শে" ); }
 	
@@ -128,7 +142,7 @@ function bddp_bn_hijri_date() {
 	
 	$month_name = array( "Muh" => "মুহাররম", "Saf" => "সফর", "Rb1" => "রবিউল-আউয়াল", "Rb2" => "রবিউস-সানি", "Jm1" => "জমাদিউল-আউয়াল", "Jm2" => "জমাদিউস-সানি", "Raj" => "রজব", "Shb" => "শাবান", "Rmd" => "রমযান", "Shw" => "শাওয়াল", "DhQ" => "জিলক্বদ", "DhH" => "জিলহজ্জ" );
 	
-	echo $day_number[$d->date("j", time()-$offset2)] . " " . $month_name[$d->date("M", time()-$offset2)] . $bddp_options['separator'] . en_to_bn($d->date("Y", time()-$offset2)) . $last_word;
+	echo $day_number[$d->date("j", time()+$offset)] . " " . $month_name[$d->date("M", time()+$offset)] . $bddp_options['separator'] . en_to_bn($d->date("Y", time()+$offset)) . $last_word;
 }
 
 
@@ -200,6 +214,7 @@ function widget_bddp_control() {
 	$bddp_options = get_option("bddp_options");
 	if (!is_array($bddp_options)) {
 		$bddp_options = array(
+		'widget_settings' => '0',
 		'wgt_title1' => 'আজকের দিন-তারিখ',
 		'show_day' => '1',
 		'show_time' => '1',
@@ -225,7 +240,7 @@ function widget_bddp_control() {
 	<p>
 	<table width="100%">
 	<tr><td> <label for="wgt_title1">Title: </label></td>
-    <td><input type="text" id="wgt_title1" name="wgt_title1" value="<?php echo $bddp_options['wgt_title1'];?>" /> </td></tr>
+    <td><input type="text" id="wgt_title1" name="wgt_title1" value="<?php echo $bddp_options['wgt_title1'];?>"/> </td></tr>
 
 	<tr><td> <label for="show_day">Day: </label> </td>
     <td><input type="checkbox" id="show_day" name="show_day" value="1" <?php if($bddp_options['show_day']==1) echo('checked="checked"'); ?>/> </td></tr>

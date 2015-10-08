@@ -1,5 +1,7 @@
 <?php
 
+	defined( 'ABSPATH' ) or die( 'Stop! You can not do this!' );
+
 if($bddp_options['trans_dt'] == "1") {
 	add_filter('date_i18n', 'en_to_bn', 10, 2);
 }

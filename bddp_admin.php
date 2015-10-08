@@ -1,11 +1,13 @@
 <?php
 
+	defined( 'ABSPATH' ) or die( 'Stop! You can not do this!' );
+	
 function bddp_options_page() {
 	?>
     <div class="wrap">
     <h2>Bangla Date Display Settings <a href="#how_to_use" class="button button-secondary">How to use?</a> <a href="#credits" class="button button-secondary">Credits</a></h2>
 
-    <br/>
+	<br/>
     <form method="post" action="options.php">
     
     <?php
@@ -19,7 +21,9 @@ settings_fields( 'bddp-settings-group' );
 	$bddp_options = get_option("bddp_options");
 	if (!is_array($bddp_options)) {
 	$bddp_options = array(
-        'trans_dt' => '0',
+		'trans_dt' => '0',
+		'bangla_tz' => '6',
+		'en_tz' => '6',
         'trans_cmnt' => '0',
         'trans_num' => '0',
         'trans_cal' => '0',
@@ -27,8 +31,7 @@ settings_fields( 'bddp-settings-group' );
         'ord_suffix' => '1',
         'separator' => ', ',
         'last_word' => '1',
-        'hijri_tz' => 'Asia/Dhaka',
-        'hijri_adjust' => '24',
+        'hijri_adjust' => '-0',
         'cal_wgt' => '0',
         'wgt_title1' => 'আজকের দিন-তারিখ',
         'wgt_title2' => 'বাংলা ক্যালেন্ডার',
@@ -55,6 +58,7 @@ if ( $bddp_options['trans_cal'] == "1" ) { $trans_cal = "Enabled"; $color4 = "gr
 elseif ( $bddp_options['trans_cal'] == "0" || $bddp_options['trans_cal'] == "" ) { $trans_cal = "Disabled"; $color4 = "red"; }
 
 ?>
+
 
 <div class="postbox">
 	<h3 class="hndle" style="padding: 10px; margin: 0;"><span>Translation Options</span></h3>
@@ -88,11 +92,62 @@ elseif ( $bddp_options['trans_cal'] == "0" || $bddp_options['trans_cal'] == "" )
 </div></div>
 
 <div class="postbox">
+	<h3 class="hndle" style="padding: 10px; margin: 0;"><span>Gregorian Date Adjustment</span></h3>
+<div class="inside"><p align="justify">Choose a time zone for gregorian date...</p>
+
+    <table class="form-table">
+    <tbody>
+        <tr>
+        <th scope="row" style="font-weight: normal;">Time Zone:</th>
+        <td><select name="bddp_options[en_tz]">
+        <option value="-12"<?php if($bddp_options['en_tz'] == "-12") { echo " selected"; } ?>>GMT -12</option>
+        <option value="-11"<?php if($bddp_options['en_tz'] == "-11") { echo " selected"; } ?>>GMT -11</option>
+        <option value="-10"<?php if($bddp_options['en_tz'] == "-10") { echo " selected"; } ?>>GMT -10</option>
+        <option value="-9"<?php if($bddp_options['en_tz'] == "-9") { echo " selected"; } ?>>GMT -9</option>
+        <option value="-8"<?php if($bddp_options['en_tz'] == "-8") { echo " selected"; } ?>>GMT -8</option>
+        <option value="-7"<?php if($bddp_options['en_tz'] == "-7") { echo " selected"; } ?>>GMT -7</option>
+        <option value="-6"<?php if($bddp_options['en_tz'] == "-6") { echo " selected"; } ?>>GMT -6</option>
+        <option value="-5"<?php if($bddp_options['en_tz'] == "-5") { echo " selected"; } ?>>GMT -5</option>
+        <option value="-4.5"<?php if($bddp_options['en_tz'] == "-4.5") { echo " selected"; } ?>>GMT -4:30</option>
+        <option value="-4"<?php if($bddp_options['en_tz'] == "-4") { echo " selected"; } ?>>GMT -4</option>
+        <option value="-3.5"<?php if($bddp_options['en_tz'] == "-3.5") { echo " selected"; } ?>>GMT -3:30</option>
+        <option value="-3"<?php if($bddp_options['en_tz'] == "-3") { echo " selected"; } ?>>GMT -3</option>
+        <option value="-2"<?php if($bddp_options['en_tz'] == "-2") { echo " selected"; } ?>>GMT -2</option>
+        <option value="-1"<?php if($bddp_options['en_tz'] == "-1") { echo " selected"; } ?>>GMT -1</option>
+        <option value="0"<?php if($bddp_options['en_tz'] == "0") { echo " selected"; } ?>>GMT 0</option>
+        <option value="1"<?php if($bddp_options['en_tz'] == "1") { echo " selected"; } ?>>GMT +1</option>
+        <option value="2"<?php if($bddp_options['en_tz'] == "2") { echo " selected"; } ?>>GMT +2</option>
+        <option value="3"<?php if($bddp_options['en_tz'] == "3") { echo " selected"; } ?>>GMT +3</option>
+        <option value="3.5"<?php if($bddp_options['en_tz'] == "3.5") { echo " selected"; } ?>>GMT +3:30</option>
+        <option value="4"<?php if($bddp_options['en_tz'] == "4") { echo " selected"; } ?>>GMT +4</option>
+        <option value="4.5"<?php if($bddp_options['en_tz'] == "4.5") { echo " selected"; } ?>>GMT +4:30</option>
+        <option value="5"<?php if($bddp_options['en_tz'] == "5") { echo " selected"; } ?>>GMT +5</option>
+        <option value="5.5"<?php if($bddp_options['en_tz'] == "5.5") { echo " selected"; } ?>>GMT +5:30</option>
+        <option value="5.75"<?php if($bddp_options['en_tz'] == "5.75") { echo " selected"; } ?>>GMT +5:45</option>
+        <option value="6"<?php if($bddp_options['en_tz'] == "6") { echo " selected"; } ?>>GMT +6</option>
+        <option value="6.5"<?php if($bddp_options['en_tz'] == "6.5") { echo " selected"; } ?>>GMT +6:30</option>
+        <option value="7"<?php if($bddp_options['en_tz'] == "7") { echo " selected"; } ?>>GMT +7</option>
+        <option value="8"<?php if($bddp_options['en_tz'] == "8") { echo " selected"; } ?>>GMT +8</option>
+        <option value="9"<?php if($bddp_options['en_tz'] == "9") { echo " selected"; } ?>>GMT +9</option>
+        <option value="9.5"<?php if($bddp_options['en_tz'] == "9.5") { echo " selected"; } ?>>GMT +9:30</option>
+        <option value="10"<?php if($bddp_options['en_tz'] == "10") { echo " selected"; } ?>>GMT +10</option>
+        <option value="10.5"<?php if($bddp_options['en_tz'] == "10.5") { echo " selected"; } ?>>GMT +10:30</option>
+        <option value="11"<?php if($bddp_options['en_tz'] == "11") { echo " selected"; } ?>>GMT +11</option>
+        <option value="12"<?php if($bddp_options['en_tz'] == "12") { echo " selected"; } ?>>GMT +12</option>
+        <option value="13"<?php if($bddp_options['en_tz'] == "13") { echo " selected"; } ?>>GMT +13</option>
+        </select>
+</td>
+        </tr>
+    </tbody>
+    </table>
+</div></div>
+
+<div class="postbox">
 	<h3 class="hndle" style="padding: 10px; margin: 0;"><span>Bangla Date Adjustment</span></h3>
 <div class="inside"><p align="justify">Choose when everyday the date (single line bangla date only, not calendar widget) will change... 6 AM (morning) or 12 AM (midnight)</p>
 
     <table class="form-table">
-    <tbody
+    <tbody>
         <tr>
         <th scope="row" style="font-weight: normal;"><label for="bddp_options[dt_change]">When the date will change?</label></th>
         <td><select id="bddp_options[dt_change]" name="bddp_options[dt_change]">
@@ -103,9 +158,43 @@ elseif ( $bddp_options['trans_cal'] == "0" || $bddp_options['trans_cal'] == "" )
         </tr>
         <tr>
         <th scope="row" style="font-weight: normal;">Time Zone:</th>
-        <td><select name="" disabled="disabled">
-<option value="" selected>Asia/Dhaka</option>
-</select>
+        <td><select name="bddp_options[bangla_tz]">
+        <option value="-12"<?php if($bddp_options['bangla_tz'] == "-12") { echo " selected"; } ?>>GMT -12</option>
+        <option value="-11"<?php if($bddp_options['bangla_tz'] == "-11") { echo " selected"; } ?>>GMT -11</option>
+        <option value="-10"<?php if($bddp_options['bangla_tz'] == "-10") { echo " selected"; } ?>>GMT -10</option>
+        <option value="-9"<?php if($bddp_options['bangla_tz'] == "-9") { echo " selected"; } ?>>GMT -9</option>
+        <option value="-8"<?php if($bddp_options['bangla_tz'] == "-8") { echo " selected"; } ?>>GMT -8</option>
+        <option value="-7"<?php if($bddp_options['bangla_tz'] == "-7") { echo " selected"; } ?>>GMT -7</option>
+        <option value="-6"<?php if($bddp_options['bangla_tz'] == "-6") { echo " selected"; } ?>>GMT -6</option>
+        <option value="-5"<?php if($bddp_options['bangla_tz'] == "-5") { echo " selected"; } ?>>GMT -5</option>
+        <option value="-4.5"<?php if($bddp_options['bangla_tz'] == "-4.5") { echo " selected"; } ?>>GMT -4:30</option>
+        <option value="-4"<?php if($bddp_options['bangla_tz'] == "-4") { echo " selected"; } ?>>GMT -4</option>
+        <option value="-3.5"<?php if($bddp_options['bangla_tz'] == "-3.5") { echo " selected"; } ?>>GMT -3:30</option>
+        <option value="-3"<?php if($bddp_options['bangla_tz'] == "-3") { echo " selected"; } ?>>GMT -3</option>
+        <option value="-2"<?php if($bddp_options['bangla_tz'] == "-2") { echo " selected"; } ?>>GMT -2</option>
+        <option value="-1"<?php if($bddp_options['bangla_tz'] == "-1") { echo " selected"; } ?>>GMT -1</option>
+        <option value="0"<?php if($bddp_options['bangla_tz'] == "0") { echo " selected"; } ?>>GMT 0</option>
+        <option value="1"<?php if($bddp_options['bangla_tz'] == "1") { echo " selected"; } ?>>GMT +1</option>
+        <option value="2"<?php if($bddp_options['bangla_tz'] == "2") { echo " selected"; } ?>>GMT +2</option>
+        <option value="3"<?php if($bddp_options['bangla_tz'] == "3") { echo " selected"; } ?>>GMT +3</option>
+        <option value="3.5"<?php if($bddp_options['bangla_tz'] == "3.5") { echo " selected"; } ?>>GMT +3:30</option>
+        <option value="4"<?php if($bddp_options['bangla_tz'] == "4") { echo " selected"; } ?>>GMT +4</option>
+        <option value="4.5"<?php if($bddp_options['bangla_tz'] == "4.5") { echo " selected"; } ?>>GMT +4:30</option>
+        <option value="5"<?php if($bddp_options['bangla_tz'] == "5") { echo " selected"; } ?>>GMT +5</option>
+        <option value="5.5"<?php if($bddp_options['bangla_tz'] == "5.5") { echo " selected"; } ?>>GMT +5:30</option>
+        <option value="5.75"<?php if($bddp_options['bangla_tz'] == "5.75") { echo " selected"; } ?>>GMT +5:45</option>
+        <option value="6"<?php if($bddp_options['bangla_tz'] == "6") { echo " selected"; } ?>>GMT +6</option>
+        <option value="6.5"<?php if($bddp_options['bangla_tz'] == "6.5") { echo " selected"; } ?>>GMT +6:30</option>
+        <option value="7"<?php if($bddp_options['bangla_tz'] == "7") { echo " selected"; } ?>>GMT +7</option>
+        <option value="8"<?php if($bddp_options['bangla_tz'] == "8") { echo " selected"; } ?>>GMT +8</option>
+        <option value="9"<?php if($bddp_options['bangla_tz'] == "9") { echo " selected"; } ?>>GMT +9</option>
+        <option value="9.5"<?php if($bddp_options['bangla_tz'] == "9.5") { echo " selected"; } ?>>GMT +9:30</option>
+        <option value="10"<?php if($bddp_options['bangla_tz'] == "10") { echo " selected"; } ?>>GMT +10</option>
+        <option value="10.5"<?php if($bddp_options['bangla_tz'] == "10.5") { echo " selected"; } ?>>GMT +10:30</option>
+        <option value="11"<?php if($bddp_options['bangla_tz'] == "11") { echo " selected"; } ?>>GMT +11</option>
+        <option value="12"<?php if($bddp_options['bangla_tz'] == "12") { echo " selected"; } ?>>GMT +12</option>
+        <option value="13"<?php if($bddp_options['bangla_tz'] == "13") { echo " selected"; } ?>>GMT +13</option>
+        </select>
 </td>
         </tr>
     </tbody>
@@ -114,23 +203,22 @@ elseif ( $bddp_options['trans_cal'] == "0" || $bddp_options['trans_cal'] == "" )
 
 <div class="postbox">
 	<h3 class="hndle" style="padding: 10px; margin: 0;"><span>Hijri Date Adjustment</span></h3>
-<div class="inside"><p align="justify">Hijri month can have 29 or 30 days depending on the visibility of the moon. Adjust it manually. For example, if you want to minus two days, input 48 hours and Save Changes.</p>
+<div class="inside"><p align="justify">Hijri month can have 29 or 30 days depending on the visibility of the moon. Adjust it manually. For example, if you want to minus two days, input -48 hours and Save Changes.</p>
 
     <table class="form-table">
-    <tbody
+    <tbody>
         <tr>
         <th scope="row" style="font-weight: normal;"><label for="bddp_options[hijri_tz]">Time Zone:</label></th>
         <td>
-		<select id="bddp_options[hijri_tz]" name="bddp_options[hijri_tz]">
-		<option value="Asia/Calcutta"<?php if ( $bddp_options['hijri_tz'] == "Asia/Calcutta" ) { echo ' selected="selected"'; } ?>>Asia/Calcutta</option>
-		<option value="Asia/Dhaka"<?php if ( $bddp_options['hijri_tz'] == "Asia/Dhaka" ) { echo ' selected="selected"'; } ?>>Asia/Dhaka</option>
+		<select id="" name="" disabled="disabled">
+		<option value="" selected="selected">Server Default</option>
 		</select>
 		</td>
-    	<td>Status:<br/><span style="color: green;"><?php echo $bddp_options['hijri_tz']; ?></span></td>
+    	<td>Status:<br/><span style="color: green;">Server Default</span></td>
         </tr>
         <tr>
-        <th scope="row" style="font-weight: normal;"><label for="bddp_options[hijri_adjust]">Minus Time (Hours):</label></th>
-        <td>-<input type="text" id="bddp_options[hijri_adjust]" name="bddp_options[hijri_adjust]" size="3" value="<?php echo $bddp_options['hijri_adjust']; ?>"></td><td> Status: <span style="color: green;">-<?php echo $bddp_options['hijri_adjust']; if($bddp_options['hijri_adjust'] == "0") { echo " Hour"; }
+        <th scope="row" style="font-weight: normal;"><label for="bddp_options[hijri_adjust]">Plus/Minus Time (Hours):</label></th>
+        <td><input maxlength="3" type="text" id="bddp_options[hijri_adjust]" name="bddp_options[hijri_adjust]" size="3" value="<?php echo $bddp_options['hijri_adjust']; ?>"> (Example: -12, +23 etc.)</td><td> Status: <span style="color: green;"><?php echo $bddp_options['hijri_adjust']; if($bddp_options['hijri_adjust'] == "0") { echo " Hour"; }
 elseif($bddp_options['hijri_adjust'] == "1") { echo " Hour"; }
 else { echo " Hours"; } ?></span></td>
         </tr>
@@ -143,7 +231,7 @@ else { echo " Hours"; } ?></span></td>
 <div class="inside"><p align="justify">Choose Bangla/Gregorian/Hijri date output format.</p>
 
     <table class="form-table">
-        <tbody
+        <tbody>
             <tr>
             <th scope="row" style="font-weight: normal;">Date separator:</th>
             <td><input type="radio" id="sep1" name="bddp_options[separator]" value=", "<?php if($bddp_options['separator'] == ", ") { echo " checked"; } ?>> <label for="sep1">Comma (,)</label><br/><input type="radio" id="sep2" name="bddp_options[separator]" value=" "<?php if($bddp_options['separator'] == " ") { echo " checked"; } ?>> <label for="sep2">None (space)</label></td>
@@ -250,7 +338,6 @@ else { echo " Hours"; } ?></span></td>
     <input type="hidden" name="bddp_options[ord_suffix]" value="1">
     <input type="hidden" name="bddp_options[separator]" value=", ">
     <input type="hidden" name="bddp_options[last_word]" value="1">
-    <input type="hidden" name="bddp_options[hijri_tz]" value="Asia/Dhaka">
     <input type="hidden" name="bddp_options[hijri_adjust]" value="24">
     <input type="hidden" name="bddp_options[cal_wgt]" value="0">
     <input type="hidden" name="bddp_options[wgt_title1]" value="আজকের দিন-তারিখ">
@@ -335,8 +422,8 @@ else { echo " Hours"; } ?></span></td>
     <h3>Support developer...</h3>
     <p align="justify">Developing this awesome plugin took a lot of effort and time, months and months of continuous voluntary unpaid work. This plugin is free and always will be! But, if you like this plugin, please donate (any amount) to help support future updates and development.</p>
     <p>
-    bKash: 01731498889<br/>
-    Dutch-Bangla Mobile Banking: 017314988892
+    bKash: 01731498889 (Personal)<br/>
+    Dutch-Bangla Mobile Banking: 017314988892 (Personal)
     </p>
     
 </div></div>
@@ -346,6 +433,8 @@ else { echo " Hours"; } ?></span></td>
 <div class="inside">
 <p align="justify">This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or ( at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of ERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the <a href="http://www.gnu.org/licenses/gpl.txt">GNU General Public License</a> for more details.</p>
 </div></div>
+
+</div>
 
 <?php
 	}
