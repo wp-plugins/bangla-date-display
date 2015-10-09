@@ -46,6 +46,10 @@ Displays Bangla, Gregorian and Hijri date, time, different types of monthly bang
 
 == Changelog ==
 
+
+= 8.4.1 =
+* Fixed: a problem with Restore Default Settings.
+
 = 8.4 =
 * Complete uninstall feature added.
 * Plugin file access denied.

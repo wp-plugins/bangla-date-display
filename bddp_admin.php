@@ -31,7 +31,7 @@ settings_fields( 'bddp-settings-group' );
         'ord_suffix' => '1',
         'separator' => ', ',
         'last_word' => '1',
-        'hijri_adjust' => '-0',
+        'hijri_adjust' => '-24',
         'cal_wgt' => '0',
         'wgt_title1' => 'আজকের দিন-তারিখ',
         'wgt_title2' => 'বাংলা ক্যালেন্ডার',
@@ -330,6 +330,8 @@ else { echo " Hours"; } ?></span></td>
 	$bddp_options = get_option("bddp_options");
 	?>
 
+    <input type="hidden" name="bddp_options[en_tz]" value="6">
+    <input type="hidden" name="bddp_options[bangla_tz]" value="6">
     <input type="hidden" name="bddp_options[trans_dt]" value="0">
     <input type="hidden" name="bddp_options[trans_cmnt]" value="0">
     <input type="hidden" name="bddp_options[trans_num]" value="0">
